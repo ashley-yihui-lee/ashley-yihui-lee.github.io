@@ -7,6 +7,7 @@
     <style>
       body {
         background-color: #faeee7;
+        font-family: 'Lexend', sans-serif;
       }
 
       .content figure {
@@ -19,33 +20,31 @@
       }
 
       .hero a {
-        /* color: black !important; */
+        color: #faeee7;
+      }
+
+      .hero a:hover {
+        color: black;
       }
 
       .custom-hero {
         background-color: #a48085;
         color: #33272a;
+        padding: 30px 0;
       }
 
       h1 {
         text-align: center;
         font-family: 'Playfair Display', serif;
         color: #a48085;
+        font-weight: 600;
+        font-size: 4.5em;
       }
 
-      h1 {
-        font-size: 4em;
-        font-weight: 900;
-      }
-
-       h3 {
-        text-align: center;
-        font-family: 'Lexend';
-        color: #a48085;
-      }
-      
       h3 {
-        font-size: 2.5em;
+        text-align: left;
+        font-family: 'Lexend', sans-serif;
+        color: #a48085;
         font-weight: 300;
       }
 
@@ -58,15 +57,10 @@
         align-items: center;
         gap: 30px;
       }
-      
+
       .bio-text {
         text-align: left;
         font-weight: 600;
-      }
-      
-      h3 {
-        font-family: 'Lexend';
-        font-weight: 300;
       }
 
       .bio-section .image {
@@ -90,19 +84,50 @@
 
       .footer {
         background-color: #a48085;
-        color: white;
+        color: #faeee7;
         text-align: center;
         padding: 20px 0;
         margin-top: 40px;
       }
 
       .footer a {
-        color: white;
+        color: #faeee7;
         font-weight: 600;
       }
 
       .footer a:hover {
-        color: #ffc6c7;
+        color: black;
+      }
+
+      p {
+        font-family: 'Lexend', sans-serif;
+        font-weight: 400;
+      }
+
+      .hero-body p.subtitle {
+        font-size: 2.5em;
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        color: #a48085;
+      }
+
+      .hero-body p.title {
+        font-size: 4.5em;
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        color: black;
+      }
+
+      .columns .column h3 {
+        text-align: left;
+      }
+
+      .column.is-one-half blockquote {
+        margin-top: 0;
+      }
+
+      .column.is-one-half p {
+        text-align: center;
       }
     </style>
 
@@ -111,7 +136,6 @@
 
   <body>
     <section class="hero custom-hero">
-      <!-- Hero head: will stick at the top -->
       <div class="hero-head">
         <nav class="navbar">
           <div class="container">
@@ -126,15 +150,13 @@
         </nav>
       </div>
 
-      <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
-          <p class="title" style="font-size: 4em; font-family: 'Playfair Display', serif; font-weight: 900; color: black;">Ashley Lee</p>
-          <p class="subtitle" style="font-size: 2.5em; font-family: 'Playfair Display', serif; font-weight: 900; color: #a48085;">Portfolio</p>
+          <p class="title">Ashley Lee</p>
+          <p class="subtitle">Portfolio</p>
         </div>
       </div>
 
-      <!-- Hero footer: will stick at the bottom -->
       <div class="hero-foot">
         <nav class="tabs">
           <div class="container">
@@ -298,16 +320,31 @@
     <div id="multimedia" class="container">
       <h1 class="title">Multimedia Projects</h1>
       <div class="columns is-multiline">
-        <div class="column is-one-half">
+        <div class="column is-one-third">
+          <h3><a href="https://www.instagram.com/reel/C83qNU3vDl6/" target="_blank">UC Berkeley Encampment Protest</a></h3>
           <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C83qNU3vDl6/" data-instgrm-version="12"></blockquote>
-          <p><a href="https://www.instagram.com/reel/C83qNU3vDl6/" target="_blank">UC Berkeley Encampment Protest</a></p>
         </div>
-        <div class="column is-one-half">
+        
+        <div class="column is-one-third">
+          <h3><a href="https://www.instagram.com/p/C7x6b1PP2s7/" target="_blank">Bluebird Movement in Taiwan</a></h3>
           <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C7x6b1PP2s7/" data-instgrm-version="12"></blockquote>
-          <p><a href="https://www.instagram.com/p/C7x6b1PP2s7/" target="_blank">Bluebird Movement in Taiwan</a></p>
         </div>
       </div>
     </div>
+    
+    <div class="column is-one-third">
+      <h3>
+        <a href="https://www.harlemworldmagazine.com/fashion-designer-aquila-benjamin-brings-inclusivity-to-harlem-fashion-week/" target="_blank">
+          Photography: Fashion Designer Aquila Benjamin Brings Inclusivity To Harlem Fashion Week
+        </a>
+      </h3>
+      <div class="card-image">
+        <figure class="image is-9by16">
+          <img src="assets/fashion.png" alt="Fashion designer Aquila Benjamin at Harlem Fashion Week" />
+        </figure>
+      </div>
+    </div>
+
 
     <div class="footer">
       <p><a href="mailto:yl5784@columbia.edu">Contact Me</a></p>
