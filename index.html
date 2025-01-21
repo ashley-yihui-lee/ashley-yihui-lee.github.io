@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
     <style>
       body {
         background-color: #FAF9F6;
@@ -160,46 +161,53 @@
     margin-bottom: 30px; /* Add more space between each project */
   }
 
-        @media (max-width: 768px) {
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
     /* Adjust hero section for smaller screens */
     .hero-body .container {
-      padding: 20px;
+      padding: 30px; /* More padding for breathing room */
     }
 
     h1 {
       font-size: 4em; /* Smaller font size for mobile */
+      margin-bottom: 20px; /* Add margin below the title */
     }
 
     h3 {
       font-size: 1.5em; /* Adjust the font size for smaller screens */
+      margin-bottom: 15px; /* Add margin below the subtitle */
     }
 
     .bio-section {
       flex-direction: column; /* Stack the bio image and text */
       align-items: flex-start; /* Align items to the start */
+      gap: 20px; /* Add space between the image and text */
     }
 
     .bio-section .image {
       width: 200px; /* Smaller image size for mobile */
       height: 200px;
-      margin-bottom: 20px;
+      margin-bottom: 20px; /* Add margin below the image */
     }
 
     .bio-text {
       text-align: left; /* Align text to the left */
+      margin-top: 10px; /* Add space above the bio text */
     }
 
     .columns.is-multiline .column.is-one-third {
       flex: 0 0 100%; /* Make columns stack vertically */
-      margin-bottom: 20px;
+      margin-bottom: 30px; /* Add more space between columns */
     }
 
     .columns.is-multiline .column.is-two-thirds {
       flex: 0 0 100%; /* Stack the larger columns too */
+      margin-bottom: 30px; /* Add space between columns */
     }
 
     .footer {
-      padding: 15px 0; /* Adjust padding for mobile */
+      padding: 25px 0; /* Add more padding for mobile */
+      margin-top: 40px; /* Add space between content and footer */
     }
 
     /* Adjust the navbar for smaller screens */
@@ -212,31 +220,31 @@
     }
 
     .navbar-item {
-      padding: 10px 0;
+      padding: 12px 0;
     }
 
     /* Adjust card images to fit better on mobile */
     .card-image figure.image.is-5by3 {
       height: auto;
       width: 100%;
+      margin-bottom: 15px; /* Add space below card images */
     }
 
     .card-content {
-      padding: 10px;
+      padding: 15px; /* Add more padding inside cards */
     }
 
     /* Adjust spacing between sections */
     section {
-      padding-bottom: 20px;
-      margin-bottom: 20px;
+      padding-bottom: 30px; /* Add more space below sections */
+      margin-bottom: 30px; /* Add more space between sections */
     }
 
     /* Adjust data projects section */
     #data-projects .columns .column {
-      margin-bottom: 20px; /* Less space between projects */
+      margin-bottom: 40px; /* More space between projects */
     }
   }
-
     </style>
 
     <title>Ashley Lee's Portfolio</title>
