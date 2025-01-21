@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
     <style>
       .content figure {
         margin-left: 0;
@@ -20,14 +13,46 @@
       a {
         color: #ffc6c7;
       }
-      
+
       .hero a {
         /* color: black !important; */
       }
-      
+
       .custom-hero {
-        background-color: #ffc6c7; 
-        color: #33272a; 
+        background-color: #ffc6c7;
+        color: #33272a;
+      }
+
+      h1, h3 {
+        text-align: center;
+      }
+
+      .container {
+        margin: 20px auto;
+      }
+
+      .bio-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .bio-text {
+        text-align: left;
+      }
+
+      .equal-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .equal-box .card {
+        height: 100%;
+      }
+
+      .hero-foot ul {
+        justify-content: center;
       }
     </style>
 
@@ -40,23 +65,11 @@
       <div class="hero-head">
         <nav class="navbar">
           <div class="container">
-            <div class="navbar-brand">
-              <span class="navbar-burger" data-target="navbarMenuHeroA">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </div>
-            <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-menu">
               <div class="navbar-end">
-                <a class="navbar-item is-active" href="#about-me"> About Me </a>
-                <a class="navbar-item" href="#data-projects"> Data Projects </a>
-                <a class="navbar-item" href="#english-articles"> English Articles </a>
-                <a class="navbar-item" href="#mandarin-articles"> Mandarin Articles </a>
-                <a class="navbar-item" href="#multimedia"> Multimedia Projects </a>
-                <a class="navbar-item" href="https://www.linkedin.com/in/yi-hui-lee-ntu/"> LinkedIn </a>
-                <a class="navbar-item" href="mailto:yl5784@columbia.edu"> Email </a>
-                <a class="navbar-item" href="resume.pdf" download> Download Resume </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/yi-hui-lee-ntu/">LinkedIn</a>
+                <a class="navbar-item" href="mailto:yl5784@columbia.edu">Email</a>
+                <a class="navbar-item" href="resume.pdf" download>Download Resume</a>
               </div>
             </div>
           </div>
@@ -76,7 +89,7 @@
         <nav class="tabs">
           <div class="container">
             <ul>
-              <li class="is-active"><a href="#about-me">All</a></li>
+              <li><a href="#about-me">About Me</a></li>
               <li><a href="#data-projects">Data Projects</a></li>
               <li><a href="#english-articles">English Articles</a></li>
               <li><a href="#mandarin-articles">Mandarin Articles</a></li>
@@ -87,40 +100,25 @@
       </div>
     </section>
 
-    <section id="about-me">
-      <div class="column is-full">
-        <div class="container has-text-centered">
-          <h1 class="title is-1">About Me</h1>
-        </div>
-
-        <div class="columns is-multiline content">
-          <div class="container has-text-centered">
-            <div class="column is-two-thirds">
-              <h3>
-                <a href="https://www.linkedin.com/in/yi-hui-lee-ntu/">Ashley Lee</a>
-              </h3>
-              <p>
-                I am a graduate student at Columbia Journalism School, specializing in data journalism. I hold a bachelor's degree from National Taiwan University, where I majored in Foreign Languages and Literatures and Political Science with a focus on International Relations.
-              </p>
-              <div class="tags">
-                <span class="tag is-success is-light">Python/pandas</span>
-              </div>
-            </div>
-            <div class="column is-one-third">
-              <figure class="image is-128x128">
-                <img class="is-rounded" src="https://media.licdn.com/dms/image/v2/D5603AQEVdyj7BAULWw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1719728249937?e=1743033600&v=beta&t=mxp4tGtHeHJ_J7bBEn-SxK3YNQz-Q8f3EMRxTfKWRSA" />
-              </figure>
-            </div>
+    <div id="about-me" class="container">
+      <h1 class="title">About Me</h1>
+      <div class="bio-section">
+        <figure class="image is-128x128">
+          <img class="is-rounded" src="https://media.licdn.com/dms/image/v2/D5603AQEVdyj7BAULWw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1719728249937?e=1743033600&v=beta&t=mxp4tGtHeHJ_J7bBEn-SxK3YNQz-Q8f3EMRxTfKWRSA" />
+        </figure>
+        <div class="bio-text">
+          <p>
+            I am a graduate student at Columbia Journalism School, specializing in data journalism. I hold a bachelor's degree from National Taiwan University, where I majored in Foreign Languages and Literatures and Political Science with a focus on International Relations.
+          </p>
+          <div class="tags">
+            <span class="tag is-success is-light">Python/pandas</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="data-projects">
-      <div class="column is-full">
-        <h1 class="title is-1">Data Projects</h1>
-      </div>
-
+    <div id="data-projects" class="container">
+      <h1 class="title">Data Projects</h1>
       <div class="columns is-multiline content">
         <div class="column is-two-thirds">
           <h3>
@@ -135,10 +133,15 @@
         </div>
         <div class="column is-one-third">
           <figure class="image is-5by3">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
           </figure>
         </div>
 
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
+          </figure>
+        </div>
         <div class="column is-two-thirds">
           <h3>
             <a href="https://ashley-yihui-lee.github.io/female-directors/">Mapping Gender: Female Representation in the 21st Century’s Greatest Directors</a>
@@ -151,18 +154,13 @@
             <span class="tag is-warning is-light">GeoJSON</span>
           </div>
         </div>
-        <div class="column is-one-third">
-          <figure class="image is-5by3">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-          </figure>
-        </div>
 
         <div class="column is-two-thirds">
           <h3>
             <a href="https://www.datawrapper.de/_/INFlK/">The Shadow Pandemic of Domestic Violence Persists in New York City</a>
           </h3>
           <p>
-            A chart of the number of reported domestic violence victims keeps growing after COVID-19 in New York City.
+            A chart of the Number of reported domestic violence victims keeps growing after COVID-19 in New York City.
           </p>
           <div class="tags">
             <span class="tag is-link is-light">DataWrapper</span>
@@ -170,131 +168,100 @@
         </div>
         <div class="column is-one-third">
           <figure class="image is-5by3">
-            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
           </figure>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="english-articles">
-      <div class="column is-full">
-        <h1 class="title is-1">English Articles</h1>
-      </div>
-
-      <div class="columns is-multiline content">
-        <div class="column is-one-third">
+    <div id="english-articles" class="container">
+      <h1 class="title">English Articles</h1>
+      <div class="columns is-multiline">
+        <div class="column is-one-third equal-box">
           <div class="card">
             <div class="card-image">
               <figure class="image is-5by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <h3 class="title is-5">
-                    <a href="another-gdoc-story/index.gdoc">Harlem Educators Turn to Crowdfunding to Stock Their Classrooms</a>
-                  </h3>
-                </div>
-              </div>
-              <div class="content">
-                <p>
-                  With limited budgets, many teachers seek contributions for headphones, printers, and art supplies.
-                </p>
-              </div>
+              <h3 class="title is-5">
+                <a href="another-gdoc-story/index.gdoc">Harlem Educators Turn to Crowdfunding to Stock Their Classrooms</a>
+              </h3>
+              <p>With limited budgets, many teachers seek contributions for headphones, printers and art supplies.</p>
             </div>
           </div>
         </div>
 
-        <div class="column is-one-third">
+        <div class="column is-one-third equal-box">
           <div class="card">
             <div class="card-image">
               <figure class="image is-5by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <h3 class="title is-5">
-                    <a href="https://theuptowner.org/target-is-opening-a-new-store-on-125th-street/">Target Is Opening a New Store on 125th Street</a>
-                  </h3>
-                </div>
-              </div>
-              <div class="content">
-                <p>
-                  Target is celebrating the grand opening of its new store on 125th Street in Harlem today, a year after the company abruptly closed its only uptown location at the East River Plaza in East Harlem.
-                </p>
-              </div>
+              <h3 class="title is-5">
+                <a href="https://theuptowner.org/target-is-opening-a-new-store-on-125th-street/">Target Is Opening a New Store on 125th Street</a>
+              </h3>
+              <p>Target is celebrating the grand opening of its new store on 125th Street in Harlem today, a year after the company abruptly closed its only uptown location at the East River Plaza in East Harlem.</p>
             </div>
           </div>
         </div>
 
-        <div class="column is-one-third">
+        <div class="column is-one-third equal-box">
           <div class="card">
             <div class="card-image">
               <figure class="image is-5by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <h3 class="title is-5">
-                    <a href="https://theuptowner.org/state-says-yes-to-dominican-cultural-and-historic-district-in-washington-heights/">State Says Yes to Dominican Cultural and Historic District in Washington Heights</a>
-                  </h3>
-                </div>
-              </div>
-              <div class="content">
-                <p>
-                  The decision advances a four-year campaign by City University researchers and local residents, but disappoints opponents who felt it slighted other ethnicities.
-                </p>
-              </div>
+              <h3 class="title is-5">
+                <a href="https://theuptowner.org/state-says-yes-to-dominican-cultural-and-historic-district-in-washington-heights/">State Says Yes to Dominican Cultural and Historic District in Washington Heights</a>
+              </h3>
+              <p>The decision advances a four-year campaign by City University researchers and local residents, but disappoints opponents who felt it slighted other ethnicities.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="mandarin-articles">
-      <div class="column is-full">
-        <h1 class="title is-1">Mandarin Articles</h1>
-      </div>
-
-      <div class="columns is-multiline content">
-        <div class="column is-one-third">
+    <div id="mandarin-articles" class="container">
+      <h1 class="title">Mandarin Articles</h1>
+      <div class="columns is-multiline">
+        <div class="column is-one-third equal-box">
           <div class="card">
             <div class="card-image">
               <figure class="image is-5by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
               </figure>
             </div>
             <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <h3 class="title is-5">
-                    <a href="https://crossing.cw.com.tw/article/19420">從旅遊攝影師到加薩屠殺見證者：上一秒和你說笑的人，下一秒只剩下血肉</a>
-                  </h3>
-                </div>
-              </div>
-              <div class="content">
-                <p>
-                  An op-ed on the life of Motaz Azaiza, a Palestinian photojournalist, through the lens of the Israel-Hamas war.
-                </p>
-              </div>
+              <h3 class="title is-5">
+                <a href="https://crossing.cw.com.tw/article/19420">The Eyes of Gaza: Seeing Palestine Through Motaz Azaiza’s Lens</a>
+              </h3>
+              <p>An op-ed on the life of Motaz Azaiza, a Palestinian photojournalist, through the lens of the Israel-Hamas war.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="multimedia">
-      <div class="column is-full">
-        <h1 class="title is-1">Multimedia Projects</h1>
+    <div id="multimedia" class="container">
+      <h1 class="title">Multimedia Projects</h1>
+      <div class="columns is-multiline">
+        <div class="column is-one-half">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C83qNU3vDl6/" data-instgrm-version="12"></blockquote>
+          <p>On-the-ground coverage of UC Berkeley Encampment Protest while I was a visiting student there.</p>
+        </div>
+        <div class="column is-one-half">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C7x6b1PP2s7/" data-instgrm-version="12"></blockquote>
+          <p>Coverage on mass protests that rocked Taiwan over the abuse of legislative power.</p>
+        </div>
       </div>
+    </div>
 
-      <div class="columns is-multiline content">
-        <div class="column is-one-third">
-          <div class="card">
-            <div class="card-image">
-              <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C83qNU3vDl6/?igsh=eHhrOW1qc
+    <script async src="https://www.instagram.com/embed.js"></script>
+  </body>
+</html>
