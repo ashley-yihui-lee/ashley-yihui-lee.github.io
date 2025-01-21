@@ -1,21 +1,272 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <style>
+      .content figure {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      a {
+        color: #20cebe;
+      }
+      
+      .hero a {
+        /* color: black !important; */
+        text-decoration: underline;
+      }
+    </style>
+
+    <title>Ashley Lee's Portfolio</title>
   </head>
+
   <body>
-  <section class="section">
+    <section class="hero is-primary is-medium">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active"> Home </a>
+            <a class="navbar-item"> LinkedIn </a>
+            <a class="navbar-item"> Email </a>
+            <span class="navbar-item">
+              <a class="button is-primary is-inverted">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Download</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">Ashley Lee</p>
+      <p class="subtitle">Portfolio</p>
+    </div>
+  </div>
+
+  <!-- Hero footer: will stick at the bottom -->
+  <div class="hero-foot">
+    <nav class="tabs">
+      <div class="container">
+        <ul>
+          <li class="is-active"><a>Overview</a></li>
+          <li><a>All</a></li>
+          <li><a>Data Projects</a></li>
+          <li><a>English Articles</a></li>
+          <li><a>Mandarin Articles</a></li>
+          <li><a>Multimedia Projects</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    
+    <section class="hero is-primary">
+      <div class="container">
+        <div class="hero-body">
+        <h1 class="title is-1">Hi, I'm Soma.</h1>
+        <p class="subtitle is-4">
+          Hello I am who I am. You can contact me at
+          <a href="mailto:jonathan.soma@gmail.com">jonathan.soma@gmail.com</a>
+          or
+          <a href="https://twitter.com/dangerscarf">@dangerscarf on Twitter</a>.
+        </p>      
+      </div>
+      </div>
+    </section>
+
     <div class="container">
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
+
+    <section class="section">
+
+    <div class="columns is-multiline content">
+      <div class="column is-two-thirds">
+        <h3>
+          <a href="trees/index.gdoc"
+            >Tree gender discrimination</a
+          >
+        </h3>
+        <p>
+          Let's learn about male vs female trees.
+        </p>
+        <div class="tags">
+          <span class="tag is-success is-light">Python/pandas</span>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <figure class="image is-5by3">
+          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
+      </div>
+
+
+      <div class="column is-one-third">
+        <figure class="image is-5by3">
+          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="column is-two-thirds">
+        <h3>
+          <a href="d3-scatter/index.html"
+            >A sample scatterplot in D3 from class</a
+          >
+        </h3>
+        <p>
+          A little blurb about this story, it's fascinating! It's interesting!
+          Please read more!
+        </p>
+        <div class="tags">
+          <span class="tag is-success is-light">Python/pandas</span>
+          <span class="tag is-warning is-light">D3.js</span>
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <figure class="image is-5by3">
+          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="column is-two-thirds">
+        <h3>
+          <a href="d3-force/index.html"
+            >A sample interactive force diagram in D3 from class</a
+          >
+        </h3>
+        <p>
+          A little blurb about this story, it's fascinating! It's interesting!
+          Please read more!
+        </p>
+        <div class="tags">
+          <span class="tag is-warning is-light">D3.js</span>
+          <span class="tag is-link is-light">DataWrapper</span>
+        </div>
+      </div>
+
+      <div class="column is-full">
+        <h1 class="title is-1">My least favorite projects</h1>
+      </div>
+
+      <div class="column is-one-third">
+          <h3>
+            <a href="story-about-something/index.gdoc"
+              >A story about something from Google Docs</a
+            >
+          </h3>
+          <p>
+            A little blurb about this story, it's fascinating! It's interesting!
+            Please read more!
+          </p>
+          <p>
+            <a
+              class="button is-warning is-small"
+              href="story-about-something/index.gdoc"
+              >Read the story</a
+            >
+            <a
+              class="button is-danger is-small"
+              href="story-about-something/index.gdoc"
+              >Check the code</a
+            >
+          </p>
+      </div>
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-5by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <h3 class="title is-5">
+                  <a href="another-gdoc-story/index.gdoc"
+                    >A second story from Google Docs that I stole from Kate</a
+                  >
+                </h3>
+              </div>
+            </div>
+        
+            <div class="content">
+              <p>
+                A little blurb about this story, it's fascinating! It's interesting!
+                Please read more!
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-5by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <h3 class="title is-5">
+                  <a href="3d-scrollytelling/index.html"
+                    >This is a 3d scrollytelling story</a
+                  >
+                </h3>
+                      </div>
+            </div>
+        
+            <div class="content">
+              <p>
+                A little blurb about this story, it's fascinating! It's interesting!
+                Please read more!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <h3>
+          <a href="ai2html-sample/index.html"
+            >This is a sample of using ai2html helpers</a
+          >
+        </h3>
+        <p>
+          A little blurb about this story, it's fascinating! It's interesting!
+          Please read more!
+        </p>
+      </div>
     </div>
   </section>
+</div>
   </body>
 </html>
