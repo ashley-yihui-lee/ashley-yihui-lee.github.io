@@ -30,7 +30,7 @@
       .custom-hero {
         background-color: #a48085;
         color: #33272a;
-        padding: 10px 0; /* Reduced padding */
+        padding: 20px 0;
       }
 
       h1 {
@@ -38,7 +38,7 @@
         font-family: 'Playfair Display', serif;
         color: #a48085;
         font-weight: 600;
-        font-size: 4em; /* Increased font size */
+        font-size: 6em;
       }
 
       h3 {
@@ -129,8 +129,7 @@
       .column.is-one-third p {
         text-align: center;
       }
-
-      /* Adjustments for multimedia section */
+      
       .columns.is-multiline .column.is-one-third {
         display: flex;
         flex-direction: column;
@@ -141,6 +140,7 @@
         height: 100%;
         width: 100%;
       }
+
     </style>
 
     <title>Ashley Lee's Portfolio</title>
@@ -184,7 +184,152 @@
       </div>
     </section>
 
-    <!-- Multimedia Section with three equal pieces -->
+    <div id="about-me" class="container">
+      <h1 class="title">About Me</h1>
+      <div class="bio-section">
+        <figure class="image is-128x128">
+          <img class="is-rounded" src="assets/profile-picture.jpg" />
+        </figure>
+        <div class="bio-text">
+          <p>
+            I am a graduate student at Columbia Journalism School, specializing in data journalism. I hold a bachelor's degree from National Taiwan University, where I majored in Foreign Languages and Literatures and Political Science with a focus on International Relations.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="data-projects" class="container">
+      <h1 class="title">Data Projects</h1>
+      <div class="columns is-multiline content">
+        <div class="column is-two-thirds">
+          <h3>
+            <a href="https://ashley-yihui-lee.github.io/us-taiwan-trade/">Taiwan Trade with the U.S.</a>
+          </h3>
+          <p>
+            An auto-updating website, showing the total value of Taiwan trade in goods (export and import) with the United States from January 2023.
+          </p>
+          <div class="tags">
+            <span class="tag is-success is-light">Python/Pandas/Beautiful Soup</span>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <img src="assets/taiwan-trade.png" alt="Placeholder image" />
+          </figure>
+        </div>
+
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <img src="assets/female-directors.png"" alt="Placeholder image" />
+          </figure>
+        </div>
+        <div class="column is-two-thirds">
+          <h3>
+            <a href="https://ashley-yihui-lee.github.io/female-directors/">Mapping Gender: Female Representation in the 21st Century’s Greatest Directors</a>
+          </h3>
+          <p>
+            Scraping data from BBC's list of the greatest movies of the 21st century, I mapped the percentage of female directors for each country mentioned.
+          </p>
+          <div class="tags">
+            <span class="tag is-success is-light">Python/Pandas/RegEx/Beautiful Soup</span>
+            <span class="tag is-warning is-light">GeoJSON</span>
+          </div>
+        </div>
+
+        <div class="column is-two-thirds">
+          <h3>
+            <a href="https://www.datawrapper.de/_/INFlK/">The Shadow Pandemic of Domestic Violence Persists in New York City</a>
+          </h3>
+          <p>
+            A chart of the Number of reported domestic violence victims keeps growing after COVID-19 in New York City.
+          </p>
+          <div class="tags">
+            <span class="tag is-link is-light">DataWrapper</span>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <img src="assets/shadow-pandemic.png" alt="Placeholder image" />
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div id="english-articles" class="container">
+      <h1 class="title">English Articles</h1>
+      <div class="columns is-multiline">
+        <div class="column is-one-third equal-box">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-5by3">
+                <img src="assets/harlem.png" alt="Placeholder image" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <h3 class="title is-5">
+                <a href="another-gdoc-story/index.gdoc">Harlem Educators Turn to Crowdfunding to Stock Their Classrooms</a>
+              </h3>
+              <p>With limited budgets, many teachers seek contributions for headphones, printers and art supplies.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-one-third equal-box">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-5by3">
+                <img src="assets/target.jpg" alt="Placeholder image" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <h3 class="title is-5">
+                <a href="https://theuptowner.org/target-is-opening-a-new-store-on-125th-street/">Target Is Opening a New Store on 125th Street</a>
+              </h3>
+              <p>Target is celebrating the grand opening of its new store on 125th Street in Harlem today, a year after the company abruptly closed its only uptown location at the East River Plaza in East Harlem.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-one-third equal-box">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-5by3">
+                <img src="assets/dominican.jpg" alt="Placeholder image" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <h3 class="title is-5">
+                <a href="https://theuptowner.org/state-says-yes-to-dominican-cultural-and-historic-district-in-washington-heights/">State Says Yes to Dominican Cultural and Historic District in Washington Heights</a>
+              </h3>
+              <p>The decision advances a four-year campaign by City University researchers and local residents, but disappoints opponents who felt it slighted other ethnicities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mandarin-articles" class="container">
+      <h1 class="title">Mandarin Articles</h1>
+      <div class="columns is-multiline">
+        <div class="column is-one-third equal-box">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-5by3">
+                <img src="assets/gaza.png" alt="Placeholder image" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <h3 class="title is-5">
+                <a href="https://crossing.cw.com.tw/article/19420">The Eyes of Gaza: Seeing Palestine Through Motaz Azaiza’s Lens</a>
+              </h3>
+              <p>An op-ed on the life of Motaz Azaiza, a Palestinian photojournalist, through the lens of the Israel-Hamas war.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Multimedia Section -->
     <div id="multimedia" class="container">
       <h1 class="title">Multimedia Projects</h1>
       <div class="columns is-multiline">
