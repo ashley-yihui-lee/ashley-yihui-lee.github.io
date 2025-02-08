@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin:auto;
+            padding:50px 10px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .chart-title {
+        font-family: 'Tenor Sans', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+        .chart-subhead {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #555; /* Optional: makes the subtitle slightly lighter */
+    }
+
+        .serif {
+            font-family: 'Lora', serif;
+        }
+        .sans-serif {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* choose a light or dark theme to add to the body tag. */
+        .dark-theme {
+            background-color: #151515;
+            color: #fbfbfb;
+        }
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        .header {
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+
+        .story-body, .header, .chart-section, .footer {
+            margin:auto;
+            max-width: 700px;
+        }
+
+        .footer {
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+
+        .chart-section.wide{
+            width:100%;
+            max-width:1200px;
+        }
+
+        .chart-section.wide p.chart-title {
+            width:100%;
+            max-width:700px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .chart-section.wide p.chart-subhead {
+            width:100%;
+            max-width:700px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+
+        /* text styles */
+
+        p.kicker {
+            font-size:1rem;
+            text-transform:uppercase;
+        }
+
+        .text-center {
+            text-align:center;
+        }
+
+        h1.headline {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 0.25rem;
+            margin-top: 1rem;
+            font-weight: 800;
+        }
+
+        h2.subhead {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            margin-bottom:0;
+            margin-top: 15px;
+            font-weight: 400;
+        }
+
+        p.body-text {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-top:0;
+            margin-bottom:15px;
+        }
+
+        h3.section-head {
+            font-size:2rem;
+            margin:40px 0 10px 0;
+            font-weight:700;
+            line-height:1.3;
+        }
+
+        .byline {
+            font-size: 1.1rem;
+            line-height: 0.75;
+            margin-top: 1.5rem;
+            font-weight: 500;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            line-height: 1;
+            margin-top: 10px;
+            font-weight:400;
+            text-transform:uppercase;
+            letter-spacing:0.5px;
+        }
+
+
+        p.note {
+            font-size:0.85rem;
+        }
+
+        /* chart styles */
+
+        .chart-section {
+            width:100%;
+            max-width:1200px;
+            padding:20px 0px;
+        }
+
+        .story-body .chart-section {
+            padding-top:0px;
+        }
+
+
+        .chart-row {
+            display:flex;
+            justify-content: space-between;
+            margin-top:20px;
+        }
+
+        p.chart-title {
+            font-size:1.3rem;
+            font-weight:700;
+            max-width:700px;
+            margin:0px auto 5px auto;
+        }
+        p.chart-subhead {
+            margin:0 auto;
+            max-width:700px;
+            font-size:1rem;
+            margin-bottom:15px;
+        }
+
+        p.chart-label {
+            margin:0 0 5px 0;
+            font-size:0.85rem;
+            text-transform:uppercase;
+            font-weight:600;
+        }
+
+        .chart-row .chart {
+            width:100%;
+            padding-right:15px;
+            min-width:calc(25% - 15px);
+
+        }
+
+
+
+        p.chart-source {
+            font-size:0.85rem;
+            margin:0;
+        }
+
+
+
+
+
+        /* photos */
+
+        .photo-section {
+            padding:30px 0px;
+            width:100%;
+            margin:auto;
+            display:flex;
+            max-width:1200px;
+        }
+
+        .photo {
+            width:100%;
+            padding-right:15px;
+        }
+        .photo img {
+            width:100%;	
+        }
+
+        p.caption {
+            font-size:0.9rem;
+            margin:0;
+        }
+
+
+
+        /* mobile */
+
+        @media (max-width:700px) {
+
+            .chart-row {
+                display:block;
+            }
+
+            .chart-row .chart {
+                padding:0;
+            }
+
+            .photo-section {
+                display:block;
+            }
+            .photo {
+                padding:0;
+            }
+
+        }
+    </style>
+    <style>
+        /* These are the styles for ai2html */
+        
+        #g-template-laptop, #g-template-medium, #g-template-mobile {
+            display: none;
+        }
+
+        @media (max-width: 490px) {
+            #g-template-mobile {
+                display: block;
+            }
+        }
+
+        @media (min-width: 490px) and (max-width: 620px) {
+            #g-template-laptop {
+                display: block;
+            }
+        }
+
+        @media (min-width: 620px)  {
+            #g-template-medium {
+                display: block;
+            }
+        }
+
+    </style>
+    
+    <!-- google fonts: Open Sans (sans-serif) and Lora (serif) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700&display=swap" rel="stylesheet">
+      
+    <title>This is your title</title>
+  </head>
+
+  <body class="light-theme"> <!-- all of the content on your html page goes inside the body -->
+
+    <div class="header">
+      <p class="kicker">Optional kicker</p>
+      <h1 class="headline">Here is your headline</h1>
+      <h2 class="subhead">This is the subhead</h2>
+      <p class="byline">By YOUR NAME</p>
+      <p class="date">Published September 9, 2019</p>
+    </div>
+
+    <div class="story-body">
+      <p class="body-text serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="body-text serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="chart-section">
+        <div class="chart-row">
+          <div class="chart">
+
+            <p class="chart-title">Gender Income Inequality on Native Lands</p>
+            <p class="chart-subhead">/ Changes in annual income across different percentiles from 2005 to 2019</p>
+            
+
+
+            <!--- PASTE YOUR AI2HTML AFTER THIS LINE -->
+
+            <style media="screen,print">
+                #g-ai2html-test-box ,
+                #g-ai2html-test-box .g-artboard {
+                    margin:0 auto;
+                }
+                #g-ai2html-test-box p {
+                    margin:0;
+                }
+                #g-ai2html-test-box .g-aiAbs {
+                    position:absolute;
+                }
+                #g-ai2html-test-box .g-aiImg {
+                    position:absolute;
+                    top:0;
+                    display:block;
+                    width:100% !important;
+                }
+                #g-ai2html-test-box .g-aiSymbol {
+                    position: absolute;
+                    box-sizing: border-box;
+                }
+                #g-ai2html-test-box .g-aiPointText p { white-space: nowrap; }
+                #g-ai2html-test-_1 {
+                    position:relative;
+                    overflow:hidden;
+                }
+                #g-ai2html-test-_1 p {
+                    font-family:TenorSans;
+                    line-height:12px;
+                    height:auto;
+                    opacity:1;
+                    letter-spacing:0em;
+                    font-size: calc(10px + 0.5vw) !important;
+                    text-align:left;
+                    color:rgb(0,0,0);
+                    text-transform:none;
+                    padding-bottom:0;
+                    padding-top:0;
+                    mix-blend-mode:normal;
+                    font-style:normal;
+                    font-weight:regular;
+                    position:static;
+                }
+                #g-ai2html-test-_1 .g-pstyle0 {
+                    height:12px;
+                    text-align:right;
+                }
+                #g-ai2html-test-_1 .g-pstyle1 {
+                    height:12px;
+                }
+            
+            </style>
+            
+            <div id="g-ai2html-test-box" class="ai2html">
+            
+                <!-- Artboard: _1 -->
+                <div id="g-ai2html-test-_1" class="g-artboard" style="" data-aspect-ratio="1.55" data-min-width="0">
+            <div style="padding: 0 0 64.5161% 0;"></div>
+                    <img id="g-ai2html-test-_1-img" class="g-ai2html-test-_1-img g-aiImg" alt="" src="ai2html-test-_1.jpg"/>
+                    <div id="g-ai0-1" class="g-_1 g-aiAbs g-aiPointText" style="top:27.8983%;margin-top:-6.6px;right:61.9386%;width:126px;">
+                        <p class="g-pstyle0">66% of male earnings</p>
+                    </div>
+                    <div id="g-ai0-2" class="g-_1 g-aiAbs g-aiPointText" style="top:28.3983%;margin-top:-6.6px;left:72.8542%;width:126px;">
+                        <p class="g-pstyle1">68% of male earnings</p>
+                    </div>
+                    <div id="g-ai0-3" class="g-_1 g-aiAbs g-aiPointText" style="top:74.8982%;margin-top:-6.6px;left:72.9513%;width:126px;">
+                        <p class="g-pstyle1">62% of male earnings</p>
+                    </div>
+                    <div id="g-ai0-4" class="g-_1 g-aiAbs g-aiPointText" style="top:76.1482%;margin-top:-6.6px;left:23.2719%;width:126px;">
+                        <p class="g-pstyle1">68% of male earnings</p>
+                    </div>
+                </div>
+            
+            </div>
+            
+            <!-- End ai2html - 2025-02-08 16:30 -->
+            
+
+
+
+
+
+
+
+        </div>
+        </div>
+    </div>
+
+    <div class="story-body">
+        <p class="body-text serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="body-text serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+      
+  </body>
+</html>
