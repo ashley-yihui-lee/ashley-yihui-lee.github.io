@@ -254,34 +254,44 @@
 
         /* mobile */
 
-        @media (max-width:640px) {
+@media (max-width: 640px) {
+    .story-body {
+        padding-left: 1.5rem;  /* 24px */
+        padding-right: 1.5rem; /* 24px */
+    }
+    
+    .header {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 
-            .chart-row {
-                display:block;
-            }
+    /* Adjust headline size for mobile */
+    h1.headline {
+        font-size: 2.5rem; /* Reduced from 4rem */
+    }
 
-            .chart-row .chart {
-                padding:0;
-            }
+    h2.subhead {
+        font-size: 1.5rem; /* Reduced from 2rem */
+    }
+    
+    /* Adjust chart section padding */
+    .chart-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
 
-            .photo-section {
-                display:block;
-            }
-            .photo {
-                padding:0;
+/* Add even smaller text for very small screens */
+@media (max-width: 380px) {
+    h1.headline {
+        font-size: 2rem;
+    }
+    
+    h2.subhead {
+        font-size: 1.25rem;
+    }
+}
 
-		.body {
-                font-size: 18px;
-            }
-		    
-            .content {
-                padding-left: 0.5em;
-                padding-right: 0.5em;}
-		    
-	.story-body{
-		padding-left: 3em;
-                padding-right: 3em;}
-        }
     </style>
     <style>
         /* These are the styles for ai2html */
@@ -374,7 +384,7 @@
 		overflow:hidden;
 	}
 	#g-ai2html-bubbles-_1 p {
-		font-family:TenorSans;
+		font-family: 'Tenor Sans', sans-serif !important
 		line-height:14px;
 		height:auto;
 		opacity:1;
@@ -491,7 +501,7 @@
 		overflow:hidden;
 	}
 	#g-ai2html-racial-_1 p {
-		font-family:TenorSans;
+		font-family: 'Tenor Sans', sans-serif !important
 		line-height:12px;
 		height:auto;
 		opacity:1;
@@ -592,7 +602,7 @@
                     overflow:hidden;
                 }
                 #g-ai2html-test-_1 p {
-                    font-family:TenorSans;
+		    font-family: 'Tenor Sans', sans-serif !important
                     line-height:12px;
                     height:auto;
                     opacity:1;
