@@ -280,6 +280,23 @@
         padding-right: 1rem;
     }
 }
+    /* Adjust annotations for mobile */
+    #g-ai2html-racial-_1 p,
+    #g-ai2html-test-_1 p,
+    #g-ai2html-bubbles-_1 p {
+        font-family: 'Tenor Sans', sans-serif !important;
+        line-height: 10px;  /* Adjust line height for better spacing */
+        height: auto;
+        opacity: 1;
+        letter-spacing: -0.02em;  /* Adjust letter spacing for better fit */
+        font-size: calc(8px + 0.3vw) !important;  /* Smaller font size for mobile */
+        word-wrap: break-word;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
     /* Adjust width of footing */
 	.footer {
         padding-left: 0;
