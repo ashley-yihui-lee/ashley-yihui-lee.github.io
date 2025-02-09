@@ -252,11 +252,22 @@
             font-size:0.9rem;
             margin:0;
         }
-
+	    
+/* my attempt to style the chart displayed on mobiles */
+	<style media="screen,print">
+	    @media (max-width: 640px) {
+	        p {
+	            word-wrap: break-word; /* Ensure words break when necessary */
+	            word-break: break-word; /* Break long words if needed */
+	            font-size: calc(8px + 0.4vw) !important; /* Adjust font size for small screens */
+	        }
+	    }
+	</style>
 
         /* mobile */
 
 @media (max-width: 640px) {
+
     .story-body, .note {
         padding-left: 1.5rem;  /* 24px */
         padding-right: 1.5rem; /* 24px */
@@ -280,12 +291,6 @@
     .chart-section {
         padding-left: 1rem;
         padding-right: 1rem;
-    }
-    /* Adjust annotations for mobile */
-    .chart p {
-        word-wrap: break-word; /* Ensure words break when necessary */
-        word-break: break-word; /* Break long words if needed */
-        font-size: calc(6px + 0.4vw) !important; /* Adjust font size for small screens */
     }
 
     /* Adjust width of footing */
