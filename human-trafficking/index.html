@@ -173,7 +173,9 @@
 
 
 <section id="scrolly-images-2" class="scrolly-container">
-  <div class="steps-container">
+    <div class="sticky-thing">
+      <img src="image5.png">
+    </div>
     <div class="step" id="step5">
       <p>9,014 cases were identified in 2022 by the National Human Trafficking Hotline.</p>
     </div>
@@ -280,13 +282,16 @@
       d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image4.png")
     })
 
-    d3.select("#step5").on('stepin', (e) => {
-      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image5.png")
-    })
+d3.select("#step5").on('stepin', (e) => {
+  // Target the image specifically in the second section
+  d3.select("#scrolly-images-2").select("img").attr("src", "image5.png");
+})
 
-    d3.select("#step6").on('stepin', (e) => {
-    d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image6.png")
-    })
+d3.select("#step6").on('stepin', (e) => {
+  // Target the image specifically in the second section
+  d3.select("#scrolly-images-2").select("img").attr("src", "image6.png");
+})
+    
   </script>
   <style>
     /* Change this to adjust the padding between steps */
