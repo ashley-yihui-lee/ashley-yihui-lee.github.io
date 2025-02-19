@@ -173,12 +173,17 @@
 
 
 <section id="scrolly-images-2" class="scrolly-container">
-  <div class="step" id="step5">
-    <p>9,014 cases were identified in 2022 by the National Human Trafficking Hotline.</p>
-  </div>
-  <div class="step" id="step6">
-    <p>Only 1,912 people were prosecuted in 2022.</p>
-  </div>
+    <div class="sticky-thing">
+        <img src="image5.png">
+    </div>
+    <div class="steps-container">
+        <div class="step" id="step5">
+            <p>9,014 cases were identified in 2022 by the National Human Trafficking Hotline.</p>
+        </div>
+        <div class="step" id="step6">
+            <p>Only 1,912 people were prosecuted in 2022.</p>
+        </div>
+    </div>
 </section>
   
 
@@ -277,13 +282,16 @@
       d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image4.png")
     })
 
-    d3.select("#step5").on('stepin', (e) => {
-      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image5.png")
-    })
+d3.select("#step5").on('stepin', (e) => {
+    console.log("Step 5 entered");
+    d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image5.png")
+})
 
-    d3.select("#step6").on('stepin', (e) => {
+d3.select("#step6").on('stepin', (e) => {
+    console.log("Step 6 entered");
     d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image6.png")
-    })
+})
+
     
   </script>
   <style>
