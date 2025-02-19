@@ -222,7 +222,6 @@
           parent: document.querySelector("#scrolly-images"),
           step: ".step",
           offset: 0.6,
-          debug: true,
         })
         .onStepEnter(function ({ element, index, direction }) {
           const event = new CustomEvent("stepin", { detail: { direction: direction } })
