@@ -38,18 +38,23 @@
     }
 
     .footer {
-      background: #f5ebe0;
-      color: black;
-      text-align: center;
-      font-size: 0.8em;
-      margin-top: 4em;
-      padding: 4em 0;
-      width: 100%; /* Ensure footer stretches across the full width */
-      position: relative; /* To ensure it sits properly at the bottom */
-      left: 0; /* Align footer to the left edge */
-      right: 0; /* Align footer to the right edge */
-    }
-
+    background: #f5ebe0;
+    color: black;
+    font-size: 0.8em;
+    padding: 1em 2em;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2em;
+    margin-bottom: 50px; /* Add space between footer and the bottom of the page */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 25px; /* Define a height to center vertically */
+  }
+    
     figure {
       margin: 0;
       padding-bottom: 1.2em;
@@ -238,7 +243,7 @@
   
   <div class="footer">
     <div class="content">
-      <p>You can find the code for this project <a href="https://github.com/ashley-yihui-lee/human-trafficking">here</a>.</p>
+    <p>You can find the code for this project <span style="color: #F9813A;"><a href="https://github.com/ashley-yihui-lee/human-trafficking">here</a></span>.</p>
     </div>
   </div>
 
