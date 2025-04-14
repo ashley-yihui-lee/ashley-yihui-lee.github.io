@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taiwan Food</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-size: 20px;
+      font-family: 'Tenor Sans', sans-serif;
+      text-rendering: optimizeLegibility;
+      background-color: #f4f4f4;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .header {
+      padding: 3em 0;
+    }
+
+    a {
+      color: #6a7a1e;
+    }
+
+    .footer {
+      background: #f4f4f4;
+      text-align: center;
+      font-size: 0.8em;
+      margin-top: 4em;
+      padding: 4em 0;
+    }
+
+    figure {
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+      text-align: center;
+      margin-top: 0.5em;
+      color: #666;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 3em;
+      line-height: 1.1;
+    }
+
+    .subhead {
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    iframe,
+    img,
+    video {
+      max-width: 100%;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    .scrolly-container {
+      position: relative;
+      margin-bottom: 1.2em;
+    }
+
+    .sticky-thing {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      height: 100svh;
+      width: 100vw;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .sticky-thing>img,
+    .sticky-thing>video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .steps-container {
+      position: relative;
+      z-index: 10;
+      max-width: 35rem;
+      margin-left: 10vw;
+      padding-bottom: 4em;
+    }
+
+    .step,
+    .step-ai2html {
+      color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50svh;
+    }
+
+    .step p,
+    .step-ai2html p {
+      text-align: left;
+    }
+
+    .step>*, .step-ai2html>* {
+      width: 700px;
+      margin: 1.3em;
+      text-align: center;
+      padding: 1.2em;
+      background-color: #000000cc;
+      color: white;
+    }
+
+    .g-artboard {
+  display: block !important;
+}
+
+    .hidden {
+      display: none;
+    }
+
+
+.column-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            }
+
+            .column-container > div {
+            flex: 1; /* This makes each div take equal space */
+            padding: 20px;
+            margin: 10px;
+            }
+
+            .column-container .sticky-thing {
+            width: 100%; /* Make iframe fill its parent div */
+            height: 800px; /* Set a fixed height or you can use 100% if parent has height */
+            border: none; /* Optional: removes the default iframe border */
+            }
+
+
+
+    
+    @media (max-width: 640px) {
+      body {
+        font-size: 18px;
+      }
+
+      .content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+    }
+    
+    @media (max-width: 900px) {
+        .column-container {
+            flex-direction: column; /* Stack columns vertically */
+            width:80%;
+            margin: 10px 0;
+        }
+        
+        .column-container > div {
+            margin: 10px 0; /* Adjust margins for vertical layout */
+        }
+    }
+
+    
+  </style>
+
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+</head>
+
+<body>
+  <div class="content">
+    <div class="header">
+      <h1>Will Taiwan Starve Under a Chinese Blockade?</h1>
+    </div>
+    <div class="byline">
+      <p>By <a href="https://ashley-yihui-lee.github.io/">Ashley Lee</a></p>
+    </div>
+  </div>
+
+  <!-- Scrolly Section for Images/Video -->
+  <section id="scrolly-images" class="scrolly-container">
+    <div class="sticky-thing">
+      <img src="night-market.jpg" />
+      <video muted playsinline autoplay preload="auto" style="display: none;"></video>
+    </div>
+    <div class="steps-container">
+      <div class="step" id="step1">
+        <p>Each year in Taiwan, 6 million people flock to a vibrant night market like this for their favorite street foods.</p>
+      </div>
+      <div class="step" id="step2">
+        <p>Taiwan is home to 23 million people, who put food not just on their palate, but on their hearts.</p>
+      </div>
+      <div class="step" id="step3">
+        <p>However, that connection to food—and even basic food security—could be threatened if China imposes a blockade on the island.</p>
+      </div>
+      <div class="step" id="step4">
+        <p>China has repeatedly refused to renounce the use of force against Taiwan.</p>
+      </div>
+      <div class="step" id="step5">
+        <p>Along with intensifying military operations and political warfare, the threat of a full-scale blockade looms larger than ever.</p>
+      </div>
+      <div class="step" id="step6">
+        <p>Last October, China sent a record-breaking 153 military aircraft into Taiwan’s air defense identification zone as part of a massive military drill, Joint Sword-2024B.</p>
+      </div>
+      <div class="step" id="step7">
+        <p>The drills practiced a “key port blockade,” aimed at cutting Taiwan off from the world—including imports of food.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Break -->
+  <div class="content">
+    <p>If a blockade is imposed, Taiwan’s survival will depend not only on the U.S. decision to intervene but also on the island’s own resources.</p>
+    <p>Whether Taiwan can feed itself if cut off from global trade depends largely on its food self-sufficiency rate—a measurement of how much of a country's food supply is sourced domestically.</p>
+  </div>
+  <!-- Content Break -->
+  <section id="scrolly-ai2html" class="scrolly-container">
+    <div class="column-container">
+    <div>
+      <!-- STEP TEXT ON THE LEFT -->
+      <div class="steps-container">
+        <div class="step-ai2html" id="step-one">
+          <p>In 2011, the government announced its goal to reach a 40% food self-sufficiency rate by 2022.</p>
+        </div>
+        <div class="step-ai2html" id="step-two">
+          <p>Yet, over a decade later, Taiwan still falls short of the goal. Only about one-third of the calories consumed in Taiwan come from domestically grown food.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <!-- CHART ON THE RIGHT -->
+
+      <div class="sticky-thing">
+        <p style="color: #6a7a1e;">Taiwan's Food Self-Sufficiency Rate Remains Low at Around 30%</strong></p>
+        <div class="ai2html">
+
+
+
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-13 01:11 -->
+<!-- ai file: food-rate.ai -->
+<style media="screen,print">
+	#g-food-rate-box ,
+	#g-food-rate-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-food-rate-box p {
+		margin:0;
+	}
+	#g-food-rate-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-food-rate-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-food-rate-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-food-rate-box .g-aiPointText p { white-space: nowrap; }
+	#g-food-rate-_1 {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-food-rate-_1 p {
+		font-family:Montserrat;
+		line-height:17px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:14px;
+		text-align:left;
+		color:rgb(255,255,255);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-food-rate-_1 .g-pstyle0 {
+		height:17px;
+		color:rgb(0,0,0);
+	}
+	#g-food-rate-_1 .g-pstyle1 {
+		height:17px;
+	}
+
+</style>
+
+<div id="g-food-rate-box" class="ai2html">
+
+	<!-- Artboard: _1 -->
+	<div id="g-food-rate-_1" class="g-artboard" style="max-width: 800px;max-height: 800px" data-aspect-ratio="1" data-min-width="0">
+<div style="padding: 0 0 100% 0;"></div>
+		<img id="g-food-rate-_1-img" class="g-food-rate-_1-img g-aiImg" alt="" src="food-rate-_1.png"/>
+<svg class="g-food-rate-_1-interactions-img g-aiImg" id="g-food-rate-_1-interactions-img" data-name="圖層_1" xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" version="1.2" viewBox="0 0 800 800">
+  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+  <line id="line-1" x1="72.876" y1="452.226" x2="797.141" y2="452.226" fill="none" stroke="#d1c972" stroke-miterlimit="10" stroke-width="4"/>
+  <rect id="rect-1" x="28.692" y="437.497" width="44.185" height="29.456" fill="#d1c972"/>
+  <rect id="rect-2" x="729.639" y="536.016" width="57.85" height="37.371" fill="#6a7a1e"/>
+<style>
+#g-food-rate-_1-interactions-img rect, #g-food-rate-_1-interactions-img circle, #g-food-rate-_1-interactions-img path, #g-food-rate-_1-interactions-img line, #g-food-rate-_1-interactions-img polyline, #g-food-rate-_1-interactions-img polygon { vector-effect: non-scaling-stroke; }
+</style>
+</svg>
+		<div id="text-1" class="g-interactions g-aiAbs g-aiPointText" style="top:56.6657%;margin-top:-9.3px;left:4.3213%;width:54px;">
+			<p class="g-pstyle0">40%</p>
+		</div>
+		<div id="text-2" class="g-interactions g-aiAbs g-aiPointText" style="top:69.5407%;margin-top:-9.3px;left:92.4323%;width:65px;">
+			<p class="g-pstyle1">30.3%</p>
+		</div>
+	</div>
+
+</div>
+
+<!-- End ai2html - 2025-04-13 01:11 -->
+
+</div>
+</div>
+</div>
+</section>
+
+
+<div class="content">
+  <p>This reliance on imported food and agricultural resources leaves Taiwan vulnerable in the event of a prolonged blockade. Therefore, the national grain reserve is critical.</p>
+  <p>During a recent interpellation, Taiwan's Minister of Agriculture, Junne-jih Chen, stated that the current national reserve as of March 2025 can sustain the entire population for 5.5 months.</p>
+  <p>The reserves fluctuate due to many factors, including harvests and weather—for instance, after the next rice harvest, the reserve could last for 8 months. Chen concluded that the reserves are generally sufficient for 8 to 12 months.</p>
+  <p>To extend beyond 12 months in the face of a blockade, Taiwan would need more arable land to drastically boost local production.</p>
+  <p>One contingency plan is to restore fallow or underutilized farmland. According to past estimates by the Ministry of Agriculture, if all fallow land were brought back into cultivation, Taiwan’s food self-sufficiency rate could rise to over 60%.</p>
+  <p>Land translates to food security. Yet, the production and consumption of a vital food source—rice—has been in decline. Due to increasingly westernized dietary habits, rice consumption has dropped 14% over the past 20 years.</p>
+  <p>As Taiwanese people eat less rice, less land is preserved—and less land is available when needed.</p>
+  <p>Production is not just about land. Key agricultural inputs—like energy, fertilizers, feed, pesticides, machinery, and their raw materials—are often imported. During a blockade, Taiwan must also prepare for the entire supply chain to be disrupted.</p>
+  </div>
+  <div class="content">
+  <img src="taiwan-food.jpg">
+</div>
+<div class="content">
+<p>Returning to the 6 million people who visit the night markets each year: Taiwanese people love their food.</p>
+<p>What the crisis of a blockade and low food self-sufficiency means for them is not just a matter of grand national security—it is a deeply personal one: the hunger people may have to endure.</p>
+<p>According to estimates by Professor Kuo-Ching Lin of National Taiwan University, in times of emergency, each person would only be able to consume an average of 2,109 kilocalories per day—barely exceeding the minimum daily caloric requirement of 2,000 kilocalories.</p>
+<p>Without a proper plan for increasing arable land and food production, Taiwan's food-loving people may be forced into survival mode if international politics turn against their fate.</p>
+</div>
+
+<div class="footer">
+  <p>You can find the code for this project <a href="">here</a></p>
+  </div>
+
+  <script>
+    // Scrollama setup for image scrollytelling
+    (() => {
+      const scroller = scrollama();
+
+      scroller
+        .setup({
+          parent: document.querySelector("#scrolly-images"),
+          step: ".step",
+          offset: 0.6,
+        })
+        .onStepEnter(({ element }) => {
+          const container = d3.select(element.closest(".scrolly-container"));
+          const img = container.select("img");
+          const video = container.select("video");
+
+          if (element.id === "step1") {
+            img.attr("src", "night-market.jpg").style("display", "block");
+            video.style("display", "none").attr("src", "");
+          }
+
+          if (element.id === "step2" || element.id === "step3") {
+            img.attr("src", "boba-food.jpg").style("display", "block");
+            video.style("display", "none").attr("src", "");
+          }
+
+          if (element.id === "step4"|| element.id === "step5") {
+            img.style("display", "none");
+            video
+              .style("display", "block")
+              .attr("src", "xi-video-with-sub.mp4")
+              .node()
+              .play();
+          }
+
+          if (element.id === "step6" || element.id === "step7") {
+            video.style("display", "none").attr("src", "");
+            img.attr("src", "pla.png").style("display", "block");
+          }
+        });
+
+      window.addEventListener("resize", scroller.resize);
+    })();
+  </script>
+
+<script>
+function hideNote() {
+  [
+    "text-1", "text-2", "rect-1", "rect-2", "line-1"
+  ].forEach(id => {
+    d3.select("#" + id).classed("hidden", true);
+  });
+}
+
+(() => {
+  const scrollerAI2HTML = scrollama();
+
+  scrollerAI2HTML
+    .setup({
+      parent: document.querySelector("#scrolly-ai2html"),
+      step: ".step-ai2html",
+      offset: 0.6,
+    })
+    .onStepEnter(({ element }) => {
+  // 顯示黑色文字框
+  if (element.id === "step-one") {
+    d3.select("#step-one").classed("hidden", false);
+  }
+
+  // 顯示圖表上的標註
+  if (element.id === "step-one") {
+    d3.select("#text-1").classed("hidden", false);
+    d3.select("#rect-1").classed("hidden", false);
+    d3.select("#line-1").classed("hidden", false);
+  }
+
+  if (element.id === "step-two") {
+    d3.select("#step-two").classed("hidden", false);
+    ["text-1", "text-2", "rect-1", "rect-2", "line-1"].forEach(id =>
+      d3.select("#" + id).classed("hidden", false)
+    );
+  }
+});
+
+  window.addEventListener("resize", scrollerAI2HTML.resize);
+  hideNote(); // Start hidden!
+})();
+  </script>
+
+
+  <!-- Resizer for ai2html chart -->
+  <script type="text/javascript">
+    (function () {
+      if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+      document.documentElement.className += " g-resizer-v3-init";
+
+      function resizer() {
+        var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+          widthById = {};
+        elements.forEach(function (el) {
+          var parent = el.parentNode,
+            width = widthById[parent.id] || parent.getBoundingClientRect().width,
+            minwidth = el.getAttribute("data-min-width"),
+            maxwidth = el.getAttribute("data-max-width");
+          widthById[parent.id] = width;
+
+          if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+            el.style.display = "block";
+          } else {
+            el.style.display = "none";
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", resizer);
+      window.addEventListener("resize", throttle(resizer, 200));
+
+      function throttle(func, wait) {
+        var timeout = null;
+        return function () {
+          if (!timeout) {
+            timeout = setTimeout(() => {
+              timeout = null;
+              func();
+            }, wait);
+          }
+        };
+      }
+
+      window.addEventListener("load", function () {
+        if (typeof resizer === "function") {
+          resizer();
+        }
+      });
+    })();
+  </script>
+
+<script>
+window.addEventListener("load", () => {
+  document.querySelectorAll(".g-artboard").forEach(el => {
+    el.style.display = "block";
+  });
+});
+  </script>
+  
+</body>
+
+</html>
+
+
