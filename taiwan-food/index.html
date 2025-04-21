@@ -322,17 +322,23 @@ He called for these measures and contingency plans to be codified:
     /*
     This part sets up your actions. In this case, it's changing the image in the scrolly container.
     */
-    d3.select("#step1").on('stepin', (e) => {
-      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "night-market.jpg")
-    })
+d3.select("#step1").on('stepin', (e) => {
+  const container = d3.select(e.target.closest(".scrolly-container"));
+  container.select("video").style("display", "none").attr("src", "");
+  container.select("img").attr("src", "night-market.jpg").style("display", "block");
+});
 
-    d3.select("#step2").on('stepin', (e) => {
-      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "night-market.jpg")
-    })
+d3.select("#step2").on('stepin', (e) => {
+  const container = d3.select(e.target.closest(".scrolly-container"));
+  container.select("video").style("display", "none").attr("src", "");
+  container.select("img").attr("src", "night-market.jpg").style("display", "block");
+});
 
-    d3.select("#step3").on('stepin', (e) => {
-      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "military.jpg")
-    })
+d3.select("#step3").on('stepin', (e) => {
+  const container = d3.select(e.target.closest(".scrolly-container"));
+  container.select("video").style("display", "none").attr("src", "");
+  container.select("img").attr("src", "military.jpg").style("display", "block");
+});
 
 d3.select("#step4").on('stepin', (e) => {
   const isMobile = window.innerWidth <= 640;
@@ -342,7 +348,6 @@ d3.select("#step4").on('stepin', (e) => {
 
   container.select("img").style("display", "none");
 
-  // Only load and play video if it's not already playing
   if (!videoEl.node().src.includes(videoSrc)) {
     videoEl
       .attr("src", videoSrc)
@@ -359,21 +364,19 @@ d3.select("#step5").on('stepin', (e) => {
 });
 
 d3.select("#step6").on('stepin', (e) => {
+  const isMobile = window.innerWidth <= 640;
   const imgSrc = isMobile ? "pla-mobile.png" : "pla.png";
   const container = d3.select(e.target.closest(".scrolly-container"));
   container.select("video").style("display", "none").attr("src", "");
-  container.select("img")
-    .attr("src", imgSrc)
-    .style("display", "block");
+  container.select("img").attr("src", imgSrc).style("display", "block");
 });
 
 d3.select("#step7").on('stepin', (e) => {
+  const isMobile = window.innerWidth <= 640;
   const imgSrc = isMobile ? "pla-mobile.png" : "pla.png";
   const container = d3.select(e.target.closest(".scrolly-container"));
   container.select("video").style("display", "none").attr("src", "");
-  container.select("img")
-    .attr("src", imgSrc)
-    .style("display", "block");
+  container.select("img").attr("src", imgSrc).style("display", "block");
 });
   </script>
   <style>
