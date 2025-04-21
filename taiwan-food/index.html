@@ -101,13 +101,13 @@
       display: block;
     }
 
-    .steps-container {
-      position: relative;
-      z-index: 10;
-      max-width: 35rem;
-      margin-left: 10vw;
-      padding-bottom: 4em;
-    }
+.steps-container {
+  position: relative;
+  z-index: 100; /* boost layering priority */
+  max-width: 35rem;
+  margin: 0 auto; /* center horizontally */
+  padding-bottom: 4em;
+}
 
     .step,
     .step-ai2html {
@@ -171,6 +171,17 @@
         padding-left: 0.5em;
         padding-right: 0.5em;
       }
+
+      .steps-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1em;
+  }
+
+  .step > * {
+    width: 100%;
+  }
+
     }
     
     @media (max-width: 900px) {
