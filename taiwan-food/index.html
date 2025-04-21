@@ -310,20 +310,22 @@ He called for these measures and contingency plans to be codified:
             video.style("display", "none").attr("src", "");
           }
 
-          if (element.id === "step4"|| element.id === "step5") {
-            img.style("display", "none");
-            video
-              .style("display", "block")
-              .attr("src", "xi-video-with-sub.mp4")
-              .node()
-              .play();
-          }
+          if (element.id === "step4" || element.id === "step5") {
+  const isMobile = window.innerWidth <= 640;
+  video
+    .style("display", "block")
+    .attr("src", isMobile ? "xi-mobile.mp4" : "xi-video-with-sub.mp4")
+    .node()
+    .play();
+}
 
-          if (element.id === "step6" || element.id === "step7") {
-            video.style("display", "none").attr("src", "");
-            img.attr("src", "pla.png").style("display", "block");
-          }
-        });
+if (element.id === "step6" || element.id === "step7") {
+  const isMobile = window.innerWidth <= 640;
+  video.style("display", "none").attr("src", "");
+  img
+    .attr("src", isMobile ? "pla-mobile.png" : "pla.png")
+    .style("display", "block");
+}
 
       window.addEventListener("resize", scroller.resize);
     })();
