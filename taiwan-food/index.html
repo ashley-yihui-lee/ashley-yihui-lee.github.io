@@ -296,12 +296,12 @@ He called for these measures and contingency plans to be codified:
           const img = container.select("img");
           const video = container.select("video");
 
-          if (element.id === "step1") {
+          if (element.id === "step1" || element.id === "step2") {
             img.attr("src", "night-market.jpg").style("display", "block");
             video.style("display", "none").attr("src", "");
           }
 
-          if (element.id === "step2" || element.id === "step3") {
+          if (element.id === "step3") {
             img.attr("src", "military.jpg").style("display", "block");
             video.style("display", "none").attr("src", "");
           }
