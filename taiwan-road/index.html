@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taiwan Street</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+  <style>
+    body {
+      margin: 0;
+      font-size: 20px;
+      font-family: 'Roboto', sans-serif;
+      text-rendering: optimizeLegibility;
+      background-color: #e4e3df;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .header {
+      padding: 3em 0;
+    }
+
+    a {
+      color: #225367;
+    }
+
+    .footer {
+      background: #f4f4f4;
+      text-align: center;
+      font-size: 0.8em;
+      margin-top: 4em;
+      padding: 4em 0;
+    }
+
+    figure {
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+      text-align: center;
+      margin-top: 0.5em;
+      color: #666;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 3em;
+      line-height: 1.1;
+    }
+
+    .subhead {
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    iframe,
+    img,
+    video {
+      max-width: 100%;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    .scrolly-container {
+      position: relative;
+      margin-bottom: 1.2em;
+    }
+
+    .sticky-thing {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .sticky-thing>img,
+    .sticky-thing>video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+.steps-container {
+  position: relative;
+  z-index: 100; /* boost layering priority */
+  max-width: 35rem;
+  margin: 10vw;/* center horizontally */
+  padding-bottom: 4em;
+}
+
+    .step,
+    .step-ai2html {
+      color: #e4e3df;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50svh;
+    }
+
+    .step p,
+    .step-ai2html p {
+      text-align: left;
+    }
+
+    .step>*, .step-ai2html>* {
+      width: 700px;
+      margin: 1.3em;
+      text-align: center;
+      padding: 1.2em;
+      background-color: #000000;
+      color: #e4e3df;
+    }
+
+    .g-artboard {
+  display: block !important;
+}
+
+    .hidden {
+      display: none;
+    }
+
+
+.column-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            }
+
+            .column-container > div {
+            flex: 1; /* This makes each div take equal space */
+            padding: 20px;
+            margin: 10px;
+            }
+
+            .column-container .sticky-thing {
+            width: 100%; /* Make iframe fill its parent div */
+            height: 800px; /* Set a fixed height or you can use 100% if parent has height */
+            border: none; /* Optional: removes the default iframe border */
+            }
+
+
+    .with-image-bg {
+        position: relative;
+        background-size: cover;
+        margin-bottom: 2em;
+
+        /* Center everything inside */
+        min-height: 70svh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* White text with a shadow */
+        color: white;
+    }
+
+    .with-image-bg {
+            background-image: url('street.png');
+        }
+
+    
+    @media (max-width: 640px) {
+      body {
+        font-size: 18px;
+      }
+
+      .content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+
+      .steps-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1em;
+  }
+
+  .step > * {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2m;
+    line-height: 1.2;
+  }
+
+    }
+    
+    @media (max-width: 900px) {
+        .column-container {
+            flex-direction: column; /* Stack columns vertically */
+            width:80%;
+            margin: 10px 0;
+        }
+        
+        .column-container > div {
+            margin: 10px 0; /* Adjust margins for vertical layout */
+        }
+    }
+
+    
+  </style>
+
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+</head>
+
+
+
+<body>
+    <div class="header with-image-bg">
+        <div class="content">
+            <h1>Taiwan's Road Names and the Struggle Over National Identity
+            </h1>
+            <p>By <a href="https://ashley-yihui-lee.github.io/" style="color: white;">Ashley Lee</a></p>
+        </div>
+    </div>
+
+    <div class="content">
+        <p>In Taiwan, the fight over national identity is often framed through politics, war, and diplomacy. But it is also quietly embedded in everyday life, reflected in the street signs that line every city and village.</p>
+        <p>The looming possibility of conflict with China, and the will of Taiwan's people to defend the island, are closely tied to how they define themselves. Those who identify more closely as Chinese may feel more at ease with the idea of “reunification,” while a distinctly Taiwanese identity reinforces a sense of belonging to an emerging nation still seeking international recognition.</p>
+        <p>Taiwan's road names tell the story of struggle over national identity. In the shadow of rising cross-strait tensions, they reveal how the legacy of Chinese nationalism continues to shape public space and raise urgent questions about what it means to be Taiwanese today.</p>
+        <p>Let’s travel to Taipei, Taiwan.</p>
+    </div>        
+
+
+
+    <!-- Scrolly Section for Images/Video -->
+  <section id="scrolly-images" class="scrolly-container">
+    <div class="sticky-thing">
+      <img src="image-1.png"/></img>
+    </div>
+    <div class="steps-container">
+      <div class="step" id="step1">
+        <p> Here are the streets surrounding the Presidential Office Building, the heart of Taiwan’s government.</p>
+      </div>
+      <div class="step" id="step2">
+        <p>On the east side lies Bo’ai Road. Bo’ai means "benevolence," a value drawn from the Three Principles of the People and deeply rooted in traditional Chinese philosophy.</p>
+      </div>
+      <div class="step" id="step3">
+        <p> Look closer. Encircling the building are Baoqing, Changsha, Guiyang, and Chongqing Roads — all named after cities in mainland China.</p>
+      </div>
+      <div class="step" id="step4">
+        <p>Only Ketagalan Boulevard breaks the pattern. Renamed in 1996, it honors the Ketagalan people, an Indigenous group in Taiwan — and reflects an embrace of local identity.</p>
+      </div>
+    </div>
+  </section>
+
+
+<div class="content">
+<p>This pattern is not unique to Taipei. Across Taiwan, most street names are still associated with Chinese identity. This reflects the legacy of the Kuomintang (KMT), which controlled Taiwan for decades and imposed its vision of a unified Chinese nation.</p>
+
+<p>After half a century of Japanese colonial rule, Taiwan returned to Chinese control in 1945. The KMT, which governed the Republic of China (ROC), quickly set out to reshape public space. In November that year, the government ordered local officials to rename streets, erasing Japanese associations and replacing them with names that promoted Chinese nationalism, honored political leaders, and reflected the Three Principles of the People.</p>
+
+<iframe title="Most Common Road Names in Taiwan" aria-label="Bar Chart" id="datawrapper-chart-BZSJk" src="https://datawrapper.dwcdn.net/BZSJk/2/?transparent=true" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="478" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+</script>
+
+<p>The result was a remapped Taiwan. Streets were renamed after Chinese provinces, mainland cities, and political figures, especially Sun Yat-sen, the founding father of the ROC, and Chiang Kai-shek (also known as Chiang Zhongzheng), the authoritarian leader who ruled Taiwan from 1949 until his death in 1975. Today, more than 500 roads still bear Chiang’s name.</p>
+
+<p>Other names reflect the scars of the Chinese Civil War. Roads with phrases like Zhongxing (national restoration), Fuxing (national revival), and New Village (military village) point to the KMT’s retreat to Taiwan, the military families who followed, and the party’s long-held ambition to recover the mainland. The emphasis on values from the Three Principles of the People also embedded traditional Chinese ideals into everyday geography.</p>
+
+<p>Although these names blend into daily life, they remain living reminders of the ROC’s claim to represent all of China — and of a lingering attempt to shape Taiwanese identity through the lens of Chinese nationalism.</p>
+
+<p>But Taiwan has changed. Since democratization in the 1990s and the lifting of martial law, public sentiment has shifted dramatically. Today, more than 60 percent of people in Taiwan identify exclusively as “Taiwanese,” not Chinese — a record high that signals generational change and growing distance from the KMT’s ideology.</p>
+
+<p>Yet the streets have not changed. Names that once replaced Japanese imperial symbols now stand as relics of a different kind of domination.</p>
+
+<p>Recent political developments have again heightened debates over identity. In 2024 and 2025, KMT lawmakers — increasingly seen as sympathetic to Beijing — passed legislation that critics say weakens Taiwan’s defenses, including cutting national defense funding. Mass recall campaigns targeting 35 KMT legislators followed, underscoring the intensity of the fight over what it means to be Taiwanese or pro-China.</p>
+
+<p>The Democratic Progressive Party (DPP), which currently holds power, has pushed to emphasize “ROC Taiwan” in official discourse, trying to balance the island’s constitutional ties to the ROC with its evolving sense of nationhood.</p>
+
+<p>As tensions with China rise and Taiwanese identity continues to harden, the question of what and whom the island chooses to commemorate — even in something as mundane as street names — may become harder to ignore.</p>
+
+</div>
+
+<div class="footer">
+  <p>You can find the code for this project <a href="https://github.com/ashley-yihui-lee/taiwan-food">here</a></p>
+  </div>
+
+
+  <script>
+    /*************
+    
+    This is the JavaScript that makes the scrolly work 
+    
+    *************/
+
+    /* 
+    This part attaches a scroll to the element with id="scrolly-images"    
+    */
+    (() => {
+      const scroller = scrollama()
+
+      scroller
+        .setup({
+          parent: document.querySelector("#scrolly-images"),
+          step: ".step",
+          offset: 0.6,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", { detail: { direction: direction } })
+          if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+            element.previousElementSibling.dispatchEvent(event)
+          }
+        })
+
+      window.addEventListener("resize", scroller.resize)
+    })()
+
+    /*
+    This part sets up your actions. In this case, it's changing the image in the scrolly container.
+    */
+d3.select("#step1").on('stepin', (e) => {
+  const container = d3.select(e.target.closest(".scrolly-container"));
+  container.select("video").style("display", "none").attr("src", "");
+  container.select("img").attr("src", "image-1.png").style("display", "block");
+});
+
+d3.select("#step2").on('stepin', (e) => {
+  const container = d3.select(e.target.closest(".scrolly-container"));
+  container.select("video").style("display", "none").attr("src", "");
+  container.select("img").attr("src", "image-2.png").style("display", "block");
+});
+
+d3.select("#step3").on('stepin', (e) => {
+  const container = d3.select(e.target.closest(".scrolly-container"));
+  container.select("video").style("display", "none").attr("src", "");
+  container.select("img").attr("src", "image-3.png").style("display", "block");
+});
+
+d3.select("#step4").on('stepin', (e) => {
+  const container = d3.select(e.target.closest(".scrolly-container"));
+  container.select("video").style("display", "none").attr("src", "");
+  container.select("img").attr("src", "image-4.png").style("display", "block");
+});
+
+d3.select("#step5").on('stepin', (e) => {
+  const container = d3.select(e.target.closest(".scrolly-container"));
+  container.select("video").style("display", "none").attr("src", "");
+  container.select("img").attr("src", "image-5.png").style("display", "block");
+});
+  </script>
+  <style>
+    .step {
+      margin-bottom: 70vh;
+    }
+  </style>
+
+</body>
+
+</html>
+
+
+
