@@ -257,8 +257,6 @@
 
   .full-bleed-section {
     width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
     padding: 60px 0;
   }
   .data-projects-section {
@@ -474,6 +472,8 @@
   .multimedia-section > .container > .title {
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    text-align: left;
+    font-style: italic;
   }
 
   .typewriter-cursor {
@@ -530,6 +530,25 @@
   .carousel-arrow:active, .carousel-arrow:focus {
     background: #43676b;
   }
+
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .full-bleed-section > .container > .title,
+  #about-me .title {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-align: left;
+    font-style: italic;
+    text-decoration: underline;
+  }
     </style>
 
     <title>Ashley Lee's Portfolio</title>
@@ -574,7 +593,7 @@
       </div>
     </section>
 
-    <div id="about-me" class="container">
+    <div id="about-me" class="container fade-in-section">
       <div class="bio-section">
         <figure class="image is-128x128">
           <img class="is-rounded" src="assets/profile-picture.jpg" />
@@ -589,7 +608,7 @@
     </div>
 
     <!-- Data Projects Section -->
-    <section class="full-bleed-section data-projects-section" id="data-projects">
+    <section class="full-bleed-section data-projects-section fade-in-section" id="data-projects">
       <div class="container">
         <h1 class="title">Data Projects</h1>
         <div class="data-projects-list">
@@ -761,7 +780,7 @@
     </section>
 
     <!-- English Articles Section -->
-    <section class="full-bleed-section english-articles-section" id="english-articles">
+    <section class="full-bleed-section english-articles-section fade-in-section" id="english-articles">
       <div class="container">
         <h1 class="title">English Articles</h1>
         <div class="english-articles-carousel-wrapper">
@@ -857,7 +876,7 @@
     </section>
 
     <!-- Mandarin Articles Section -->
-    <section class="full-bleed-section mandarin-articles-section" id="mandarin-articles">
+    <section class="full-bleed-section mandarin-articles-section fade-in-section" id="mandarin-articles">
       <div class="container">
         <h1 class="title">Mandarin Articles</h1>
         <div class="columns is-multiline">
@@ -881,7 +900,7 @@
     </section>
 
     <!-- Multimedia Projects Section -->
-    <section class="full-bleed-section multimedia-section" id="multimedia">
+    <section class="full-bleed-section multimedia-section fade-in-section" id="multimedia">
       <div class="container">
         <h1 class="title">Multimedia Projects</h1>
         <div class="columns is-multiline">
@@ -949,6 +968,25 @@
             carousel.scrollBy({ left: 350, behavior: 'smooth' });
           });
         }
+      });
+
+      // Fade-in animation for sections
+      document.addEventListener('DOMContentLoaded', function() {
+        const faders = document.querySelectorAll('.fade-in-section');
+        const appearOptions = {
+          threshold: 0.15,
+          rootMargin: '0px 0px -40px 0px'
+        };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          });
+        }, appearOptions);
+        faders.forEach(fader => {
+          appearOnScroll.observe(fader);
+        });
       });
     </script>
   </body>
