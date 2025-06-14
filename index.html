@@ -168,90 +168,154 @@
 
   /* Mobile-specific styles */
   @media (max-width: 768px) {
-    /* Adjust hero section for smaller screens */
-    .hero-body .container {
-      padding: 30px; /* More padding for breathing room */
+    html, body {
+      overflow-x: hidden;
     }
-
-    h1 {
-      font-size: 4em; /* Smaller font size for mobile */
-      margin-bottom: 20px; /* Add margin below the title */
-    }
-
-    h3 {
-      font-size: 1.5em; /* Adjust the font size for smaller screens */
-      margin-bottom: 15px; /* Add margin below the subtitle */
-    }
-
-    .bio-section {
-      flex-direction: column; /* Stack the bio image and text */
-      align-items: flex-start; /* Align items to the start */
-      gap: 20px; /* Add space between the image and text */
-    }
-
-    .bio-section .image {
-      width: 200px; /* Smaller image size for mobile */
-      height: 200px;
-      margin-bottom: 20px; /* Add margin below the image */
-    }
-
-    .bio-text {
-      text-align: left; /* Align text to the left */
-      margin-top: 10px; /* Add space above the bio text */
-    }
-
-    .columns.is-multiline .column.is-one-third {
-      flex: 0 0 100%; /* Make columns stack vertically */
-      margin-bottom: 30px; /* Add more space between columns */
-    }
-
-    .columns.is-multiline .column.is-two-thirds {
-      flex: 0 0 100%; /* Stack the larger columns too */
-      margin-bottom: 30px; /* Add space between columns */
-    }
-
-    .footer {
-      padding: 25px 0; /* Add more padding for mobile */
-      margin-top: 40px; /* Add space between content and footer */
-    }
-
-    /* Adjust the navbar for smaller screens */
+    .hero-foot,
+    .hero-foot .container,
+    .navbar,
     .navbar-menu {
-      display: block;
+      width: 100vw !important;
+      max-width: 100vw !important;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      overflow-x: visible !important;
     }
-
-    .navbar-end {
-      text-align: center;
+    .tabs {
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+      overflow-x: auto;
     }
-
-    .navbar-item {
-      padding: 12px 0;
+    .hero-body .container {
+      padding: 20px 5px;
     }
-
-    /* Adjust card images to fit better on mobile */
-    .card-image figure.image.is-5by3 {
-      height: auto;
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.7em;
+    }
+    h3, .title.is-5 {
+      font-size: 1.1em;
+      margin-bottom: 0.5em;
+    }
+    .bio-section {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .bio-section .image {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 10px;
+    }
+    .bio-text {
+      max-width: 100%;
+      font-size: 1em;
+    }
+    .full-bleed-section {
+      padding: 20px 0;
+    }
+    .full-bleed-section .container,
+    .container {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    .columns.is-multiline {
+      flex-direction: column;
+    }
+    .columns.is-multiline .column.is-one-third,
+    .columns.is-multiline .column.is-two-thirds {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .card-image figure.image.is-5by3,
+    .card-image figure.image.is-9by16 {
       width: 100%;
-      margin-bottom: 15px; /* Add space below card images */
+      height: auto;
+      margin-bottom: 10px;
     }
-
     .card-content {
-      padding: 15px; /* Add more padding inside cards */
+      padding: 10px 5px;
     }
-
-    /* Adjust spacing between sections */
-    section {
-      padding-bottom: 30px; /* Add more space below sections */
-      margin-bottom: 30px; /* Add more space between sections */
+    .project-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4em;
+      margin-top: 0.3em;
     }
-
-    /* Adjust data projects section */
-    #data-projects .columns .column {
-      margin-bottom: 40px; /* More space between projects */
+    .project-pill, .button.is-readhere, .button.is-small.is-danger.is-light, .tag {
+      font-size: 0.95em;
+      height: auto;
+      padding: 0.3em 0.8em;
     }
-
-    .box, .card {
-      border-radius: 0 !important;
+    .english-articles-carousel-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .english-articles-carousel .columns {
+      flex-wrap: nowrap;
+      width: max-content;
+    }
+    .english-articles-carousel .column {
+      min-width: 90vw;
+      max-width: 90vw;
+      flex: 0 0 90vw;
+    }
+    .carousel-arrow {
+      width: 32px;
+      height: 40px;
+      font-size: 1.5em;
+      margin: 0 2px;
+    }
+    .footer {
+      padding: 18px 0;
+      font-size: 1em;
+    }
+    .navbar-menu {
+      display: none !important;
+    }
+    .navbar-end {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2em;
+    }
+    .navbar-item {
+      padding: 10px 0;
+      font-size: 1em;
+    }
+    .hero-body p.title {
+      font-size: 2.2em;
+    }
+    .hero-body p.subtitle {
+      font-size: 1.2em;
+    }
+    .full-bleed-section > .container > .title {
+      margin-bottom: 1.2em;
+    }
+    .filled-title, .outlined-title {
+      font-size: 1.4em;
+      line-height: 1.1;
+    }
+    .outlined-title {
+      -webkit-text-stroke: 1px #1f3134;
+      text-stroke: 1px #1f3134;
+    }
+    .tab-btn {
+      font-size: 0.85em;
     }
   }
 
@@ -324,7 +388,7 @@
     margin-bottom: 2.5rem;
   }
 
-  .navbar-menu {
+    .navbar-menu {
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -337,7 +401,7 @@
     margin-right: auto;
     padding-left: 32px;
     padding-right: 32px;
-  }
+    }
 
   .data-projects-list {
     margin: 0;
@@ -405,7 +469,7 @@
     font-size: 0.97em;
     display: inline-flex;
     align-items: center;
-    height: auto;
+      height: auto;
   }
 
   .data-projects-section .title {
@@ -499,7 +563,7 @@
     overflow-x: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    width: 100%;
+      width: 100%;
   }
   .english-articles-carousel .columns {
     flex-wrap: nowrap;
@@ -541,21 +605,154 @@
     transform: none;
   }
 
-  .full-bleed-section > .container > .title {
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    text-align: left;
-    font-style: italic;
-    text-decoration: underline;
-    margin-bottom: 2.2em;
-  }
+  .full-bleed-section > .container > .title,
   #about-me .title {
     text-transform: uppercase;
     letter-spacing: 0.04em;
     text-align: left;
-    font-style: italic;
-    text-decoration: underline;
+    font-style: normal;
+    margin-bottom: 2.2em;
+    background: none;
+    color: inherit;
+    -webkit-text-stroke: initial;
+    text-stroke: initial;
+  }
+  #about-me .title {
     margin-bottom: 0.6em;
+  }
+  .filled-title {
+    color: #1f3134;
+    font-weight: 700;
+    -webkit-text-stroke: 0;
+    text-stroke: 0;
+    font-size: 2em;
+    line-height: 1.05;
+  }
+  .outlined-title {
+    color: transparent;
+    font-weight: 700;
+    -webkit-text-stroke: 2px #1f3134;
+    text-stroke: 2px #1f3134;
+    font-size: 2em;
+    line-height: 1.05;
+  }
+  @media (max-width: 768px) {
+    .filled-title, .outlined-title {
+      font-size: 1.2em;
+      line-height: 1.1;
+    }
+    .outlined-title {
+      -webkit-text-stroke: 1px #1f3134;
+      text-stroke: 1px #1f3134;
+    }
+  }
+
+  /* Desktop Tab Bar */
+  .tab-bar-desktop {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    background: #1f3134;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2000;
+    border-top: 1.5px solid #fff;
+    height: 54px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-bar-desktop .tab-btn[data-section="footer"] {
+    margin-left: auto;
+  }
+  .tab-btn {
+    min-width: 70px;
+    flex: 0 0 auto;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 0.95em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 0 10px;
+    height: 100%;
+    outline: none;
+    transition: background 0.2s, color 0.2s;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .tab-btn.active {
+    color: #1f3134;
+    background: #fff;
+  }
+  body {
+    padding-bottom: 54px;
+  }
+  @media (max-width: 768px) {
+    .tab-bar-desktop { display: none !important; }
+  }
+  @media (min-width: 769px) {
+    .tab-bar-desktop { display: flex !important; }
+  }
+
+  /* Mobile Tab Bar */
+  .tab-bar-mobile {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    background: #1f3134;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2000;
+    border-top: 1.5px solid #fff;
+    height: 54px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-btn {
+    min-width: 70px;
+    flex: 0 0 auto;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 0.95em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 0 10px;
+    height: 100%;
+    outline: none;
+    transition: background 0.2s, color 0.2s;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .tab-btn.active {
+    color: #1f3134;
+    background: #fff;
+  }
+  @media (max-width: 768px) {
+    .tab-bar-mobile {
+      padding-right: 18px;
+    }
+  }
+  @media (min-width: 769px) {
+    .tab-bar-mobile { display: none !important; }
+  }
+
+  @media (max-width: 768px) {
+    #english-articles { display: none !important; }
+    #english-articles-mobile { margin-top: 0 !important; }
+    #english-articles-mobile .container { margin-top: 0 !important; padding-top: 0 !important; }
   }
     </style>
 
@@ -601,13 +798,13 @@
       </div>
     </section>
 
-    <div id="about-me" class="container fade-in-section">
+    <div id="about-me" class="container fade-in-section main-section">
       <div class="bio-section">
         <figure class="image is-128x128">
           <img class="is-rounded" src="assets/profile-picture.jpg" />
         </figure>
         <div class="bio-text">
-          <h1 class="title">About Me</h1>
+          <h1 class="title"><span class="filled-title">About</span> <span class="outlined-title">Me</span></h1>
           <p>
             I am a graduate student at Columbia Journalism School, specializing in data journalism. I hold a bachelor's degree from National Taiwan University, where I majored in Foreign Languages and Literatures and Political Science with a focus on International Relations.
           </p>
@@ -616,9 +813,9 @@
     </div>
 
     <!-- Data Projects Section -->
-    <section class="full-bleed-section data-projects-section fade-in-section" id="data-projects">
+    <section class="full-bleed-section data-projects-section fade-in-section main-section" id="data-projects">
       <div class="container">
-        <h1 class="title">Data Projects</h1>
+        <h1 class="title"><span class="filled-title">Data</span><br><span class="outlined-title">Projects</span></h1>
         <div class="data-projects-list">
           <!-- Project 1 -->
           <div class="columns is-vcentered">
@@ -627,68 +824,68 @@
                 <img src="assets/taiwan-trade.png" alt="Taiwan Trade Image" />
               </figure>
             </div>
-            <div class="column is-two-thirds">
-              <h3>
+        <div class="column is-two-thirds">
+          <h3>
                 <a class="title is-5" href="https://ashley-yihui-lee.github.io/us-taiwan-trade/">Taiwan Trade with the U.S.</a>
-              </h3>
+          </h3>
               <p class="project-desc">
-                An auto-updating website, showing the total value of Taiwan trade in goods (export and import) with the United States from January 2023.
-              </p>
+            An auto-updating website, showing the total value of Taiwan trade in goods (export and import) with the United States from January 2023.
+          </p>
               <div class="project-actions">
                 <a class="button is-small is-dark is-readhere project-pill" href="https://ashley-yihui-lee.github.io/us-taiwan-trade/" target="_blank">Read Here</a>
-                <button 
+          <button 
                   class="button is-small is-danger is-light project-pill" 
-                  onclick="window.open('https://github.com/ashley-yihui-lee/us-taiwan-trade', '_blank')">
-                  See My Code
-                </button>
+            onclick="window.open('https://github.com/ashley-yihui-lee/us-taiwan-trade', '_blank')">
+            See My Code
+          </button>
                 <div class="tags">
                   <span class="tag is-success is-light project-pill">Python/Pandas/Beautiful Soup</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
+        </div>
+        </div>
+        </div>
           <!-- Project 2 -->
           <div class="columns is-vcentered">
-            <div class="column is-one-third">
-              <figure class="image is-5by3">
-                <img src="assets/female-directors.png" alt="Female Directors Image" />
-              </figure>
-            </div>
-            <div class="column is-two-thirds">
-              <h3>
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <img src="assets/female-directors.png" alt="Female Directors Image" />
+          </figure>
+        </div>
+        <div class="column is-two-thirds">
+          <h3>
                 <a class="title is-5" href="https://ashley-yihui-lee.github.io/female-directors/">Mapping Gender: Female Representation in the 21st Century's Greatest Directors</a>
-              </h3>
+          </h3>
               <p class="project-desc">
-                Scraping data from BBC's list of the greatest movies of the 21st century, I mapped the percentage of female directors for each country mentioned.
-              </p>
+            Scraping data from BBC's list of the greatest movies of the 21st century, I mapped the percentage of female directors for each country mentioned.
+          </p>
               <div class="project-actions">
                 <a class="button is-small is-dark is-readhere project-pill" href="https://ashley-yihui-lee.github.io/female-directors/" target="_blank">Read Here</a>
-                <button 
+          <button 
                   class="button is-small is-danger is-light project-pill" 
-                  onclick="window.open('https://github.com/ashley-yihui-lee/female-directors', '_blank')">
-                  See My Code
-                </button>
+            onclick="window.open('https://github.com/ashley-yihui-lee/female-directors', '_blank')">
+            See My Code
+          </button>
                 <div class="tags">
                   <span class="tag is-success is-light project-pill">Python/Pandas/RegEx/Beautiful Soup</span>
                   <span class="tag is-warning is-light project-pill">GeoJSON</span>
-                </div>
+        </div>
               </div>
-            </div>
+        </div>
           </div>
           <!-- Project 3 -->
           <div class="columns is-vcentered">
-            <div class="column is-one-third">
-              <figure class="image is-5by3">
-                <img src="assets/shadow-pandemic.png" alt="Shadow Pandemic Image" />
-              </figure>
-            </div>
-            <div class="column is-two-thirds">
-              <h3>
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <img src="assets/shadow-pandemic.png" alt="Shadow Pandemic Image" />
+          </figure>
+        </div>
+        <div class="column is-two-thirds">
+          <h3>
                 <a class="title is-5" href="https://www.datawrapper.de/_/INFlK/">The Shadow Pandemic of Domestic Violence Persists in New York City</a>
-              </h3>
+          </h3>
               <p class="project-desc">
-                A chart of the Number of reported domestic violence victims keeps growing after COVID-19 in New York City.
-              </p>
+            A chart of the Number of reported domestic violence victims keeps growing after COVID-19 in New York City.
+          </p>
               <div class="project-actions">
                 <a class="button is-small is-dark is-readhere project-pill" href="https://www.datawrapper.de/_/INFlK/" target="_blank">Read Here</a>
                 <button 
@@ -696,36 +893,36 @@
                   onclick="window.open('https://www.datawrapper.de/_/INFlK/', '_blank')">
                   See My Code
                 </button>
-                <div class="tags">
+          <div class="tags">
                   <span class="tag is-link is-light project-pill">DataWrapper</span>
-                </div>
-              </div>
-            </div>
+          </div>
+        </div>
+        </div>
           </div>
           <!-- Project 4 -->
           <div class="columns is-vcentered">
-            <div class="column is-one-third">
-              <figure class="image is-5by3">
-                <img src="assets/human-trafficking.png" alt="Human Trafficking Image" />
-              </figure>
-            </div>
-            <div class="column is-two-thirds">
-              <h3>
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <img src="assets/human-trafficking.png" alt="Human Trafficking Image" />
+          </figure>
+        </div>
+        <div class="column is-two-thirds">
+          <h3>
                 <a class="title is-5" href="https://ashley-yihui-lee.github.io/human-trafficking/">Human Trafficking Survivors' Fight for T Visa</a>
-              </h3>
+          </h3>
               <p class="project-desc">
-                This project explores the complex journey of human trafficking survivors, with a specific focus on the challenges they face in securing T Visas in the United States.
-              </p>
+            This project explores the complex journey of human trafficking survivors, with a specific focus on the challenges they face in securing T Visas in the United States.
+          </p>
               <div class="project-actions">
                 <a class="button is-small is-dark is-readhere" href="https://ashley-yihui-lee.github.io/human-trafficking/" target="_blank">Read Here</a>
-                <button 
-                  class="button is-small is-danger is-light" 
-                  onclick="window.open('https://github.com/ashley-yihui-lee/human-trafficking', '_blank')">
-                  See My Code
-                </button>
+          <button 
+            class="button is-small is-danger is-light" 
+            onclick="window.open('https://github.com/ashley-yihui-lee/human-trafficking', '_blank')">
+            See My Code
+          </button>
                 <div class="tags">
                   <span class="tag is-success is-light">Python/Pandas/Beautiful Soup</span>
-                </div>
+        </div>
               </div>
             </div>
           </div>
@@ -735,113 +932,113 @@
               <figure class="image is-5by3">
                 <img src="assets/native-income.png" alt="Native Income Image" />
               </figure>
-            </div>
-            <div class="column is-two-thirds">
-              <h3>
+        </div>
+        <div class="column is-two-thirds">
+          <h3>
                 <a class="title is-5" href="https://ashley-yihui-lee.github.io/native-income/">The Income Gap for Native Women</a>
-              </h3>
+          </h3>
               <p class="project-desc">
-                This project explores income disparities among Native American women, highlighting the intersectionality of gender, race, and geography in economic inequality.
-              </p>
+            This project explores income disparities among Native American women, highlighting the intersectionality of gender, race, and geography in economic inequality.
+          </p>
               <div class="project-actions">
                 <a class="button is-small is-dark is-readhere" href="https://ashley-yihui-lee.github.io/native-income/" target="_blank">Read Here</a>
-                <button 
-                  class="button is-small is-danger is-light" 
-                  onclick="window.open('https://github.com/ashley-yihui-lee/income-inequality', '_blank')">
-                  See My Code
-                </button>
+          <button 
+            class="button is-small is-danger is-light" 
+            onclick="window.open('https://github.com/ashley-yihui-lee/income-inequality', '_blank')">
+            See My Code
+          </button>
                 <div class="tags">
                   <span class="tag is-success is-light">Python/Pandas/Beautiful Soup</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
+        </div>
+        </div>
+        </div>
           <!-- Project 6 -->
           <div class="columns is-vcentered">
-            <div class="column is-one-third">
-              <figure class="image is-5by3">
-                <img src="assets/boba-index.png" alt="Boba Index Image" />
-              </figure>
-            </div>
-            <div class="column is-two-thirds">
-              <h3>
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <img src="assets/boba-index.png" alt="Boba Index Image" />
+          </figure>
+        </div>
+        <div class="column is-two-thirds">
+          <h3>
                 <a class="title is-5" href="https://ashley-yihui-lee.github.io/boba-index/">Boba Index</a>
-              </h3>
+          </h3>
               <p class="project-desc">
-                A project analyzing bubble tea prices in different cities to compare purchasing power parity.
-              </p>
+            A project analyzing bubble tea prices in different cities to compare purchasing power parity.
+          </p>
               <div class="project-actions">
                 <a class="button is-small is-dark is-readhere" href="https://ashley-yihui-lee.github.io/boba-index/" target="_blank">Read Here</a>
-                <button 
-                  class="button is-small is-danger is-light" 
-                  onclick="window.open('https://github.com/ashley-yihui-lee/boba-index', '_blank')">
-                  See My Code
-                </button>
+          <button 
+            class="button is-small is-danger is-light" 
+            onclick="window.open('https://github.com/ashley-yihui-lee/boba-index', '_blank')">
+            See My Code
+          </button>
                 <div class="tags">
                   <span class="tag is-success is-light">Python/Pandas/Beautiful Soup</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-    </section>
-
+    </div>
+</div>
+      </div>
+    </div>
+  </section>
+    
     <!-- English Articles Section -->
-    <section class="full-bleed-section english-articles-section fade-in-section" id="english-articles">
+    <section class="full-bleed-section english-articles-section fade-in-section main-section" id="english-articles">
       <div class="container">
-        <h1 class="title">English Articles</h1>
+        <h1 class="title"><span class="filled-title">English</span><br><span class="outlined-title">Articles</span></h1>
         <div class="english-articles-carousel-wrapper">
           <button class="carousel-arrow left" aria-label="Scroll left">&#8592;</button>
           <div class="english-articles-carousel">
-            <div class="columns is-multiline">
-              <div class="column is-one-third equal-box">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-5by3">
-                      <img src="assets/harlem.png" alt="Placeholder image" />
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <h3 class="title is-5">
-                      <a href="https://theuptowner.org/harlem-educators-turn-to-crowdfunding-to-stock-their-classrooms/">Harlem Educators Turn to Crowdfunding to Stock Their Classrooms</a>
-                    </h3>
-                    <p>With limited budgets, many teachers seek contributions for headphones, printers and art supplies.</p>
-                  </div>
-                </div>
-              </div>
+      <div class="columns is-multiline">
+        <div class="column is-one-third equal-box">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-5by3">
+                <img src="assets/harlem.png" alt="Placeholder image" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <h3 class="title is-5">
+                <a href="https://theuptowner.org/harlem-educators-turn-to-crowdfunding-to-stock-their-classrooms/">Harlem Educators Turn to Crowdfunding to Stock Their Classrooms</a>
+              </h3>
+              <p>With limited budgets, many teachers seek contributions for headphones, printers and art supplies.</p>
+            </div>
+          </div>
+        </div>
 
-              <div class="column is-one-third equal-box">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-5by3">
-                      <img src="assets/target.jpg" alt="Placeholder image" />
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <h3 class="title is-5">
-                      <a href="https://theuptowner.org/target-is-opening-a-new-store-on-125th-street/">Target Is Opening a New Store on 125th Street</a>
-                    </h3>
-                    <p>Target is celebrating the grand opening of its new store on 125th Street in Harlem today, a year after the company abruptly closed its only uptown location at the East River Plaza in East Harlem.</p>
-                  </div>
-                </div>
-              </div>
+        <div class="column is-one-third equal-box">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-5by3">
+                <img src="assets/target.jpg" alt="Placeholder image" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <h3 class="title is-5">
+                <a href="https://theuptowner.org/target-is-opening-a-new-store-on-125th-street/">Target Is Opening a New Store on 125th Street</a>
+              </h3>
+              <p>Target is celebrating the grand opening of its new store on 125th Street in Harlem today, a year after the company abruptly closed its only uptown location at the East River Plaza in East Harlem.</p>
+            </div>
+          </div>
+        </div>
 
-              <div class="column is-one-third equal-box">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-5by3">
-                      <img src="assets/dominican.jpg" alt="Placeholder image" />
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <h3 class="title is-5">
-                      <a href="https://theuptowner.org/state-says-yes-to-dominican-cultural-and-historic-district-in-washington-heights/">State Says Yes to Dominican Cultural and Historic District in Washington Heights</a>
-                    </h3>
-                    <p>The decision advances a four-year campaign by City University researchers and local residents, but disappoints opponents who felt it slighted other ethnicities.</p>
-                  </div>
-                </div>
-              </div>
+        <div class="column is-one-third equal-box">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-5by3">
+                <img src="assets/dominican.jpg" alt="Placeholder image" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <h3 class="title is-5">
+                <a href="https://theuptowner.org/state-says-yes-to-dominican-cultural-and-historic-district-in-washington-heights/">State Says Yes to Dominican Cultural and Historic District in Washington Heights</a>
+              </h3>
+              <p>The decision advances a four-year campaign by City University researchers and local residents, but disappoints opponents who felt it slighted other ethnicities.</p>
+            </div>
+          </div>
+        </div>
 
               <!-- Blank Article 4 -->
               <div class="column is-one-third equal-box">
@@ -856,9 +1053,9 @@
                       <a href="#">(Title coming soon)</a>
                     </h3>
                     <p>Description coming soon.</p>
-                  </div>
-                </div>
-              </div>
+        </div>
+      </div>
+    </div>
 
               <!-- Blank Article 5 -->
               <div class="column is-one-third equal-box">
@@ -883,23 +1080,85 @@
       </div>
     </section>
 
-    <!-- Mandarin Articles Section -->
-    <section class="full-bleed-section mandarin-articles-section fade-in-section" id="mandarin-articles">
+    <!-- English Articles Section (Mobile Only) -->
+    <section class="full-bleed-section english-articles-section-mobile fade-in-section main-section" id="english-articles-mobile">
       <div class="container">
-        <h1 class="title">Mandarin Articles</h1>
+        <h1 class="title"><span class="filled-title">English</span><br><span class="outlined-title">Articles</span></h1>
         <div class="columns is-multiline">
           <div class="column is-one-third equal-box">
             <div class="card">
               <div class="card-image">
                 <figure class="image is-5by3">
-                  <img src="assets/gaza.png" alt="Placeholder image" />
+                  <img src="assets/harlem.png" alt="Placeholder image" />
                 </figure>
               </div>
               <div class="card-content">
                 <h3 class="title is-5">
-                  <a href="https://crossing.cw.com.tw/article/19420">The Eyes of Gaza: Seeing Palestine Through Motaz Azaiza's Lens</a>
+                  <a href="https://theuptowner.org/harlem-educators-turn-to-crowdfunding-to-stock-their-classrooms/">Harlem Educators Turn to Crowdfunding to Stock Their Classrooms</a>
                 </h3>
-                <p>An op-ed on the life of Motaz Azaiza, a Palestinian photojournalist, through the lens of the Israel-Hamas war.</p>
+                <p>With limited budgets, many teachers seek contributions for headphones, printers and art supplies.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third equal-box">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-5by3">
+                  <img src="assets/target.jpg" alt="Placeholder image" />
+                </figure>
+              </div>
+              <div class="card-content">
+                <h3 class="title is-5">
+                  <a href="https://theuptowner.org/target-is-opening-a-new-store-on-125th-street/">Target Is Opening a New Store on 125th Street</a>
+                </h3>
+                <p>Target is celebrating the grand opening of its new store on 125th Street in Harlem today, a year after the company abruptly closed its only uptown location at the East River Plaza in East Harlem.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third equal-box">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-5by3">
+                  <img src="assets/dominican.jpg" alt="Placeholder image" />
+                </figure>
+              </div>
+              <div class="card-content">
+                <h3 class="title is-5">
+                  <a href="https://theuptowner.org/state-says-yes-to-dominican-cultural-and-historic-district-in-washington-heights/">State Says Yes to Dominican Cultural and Historic District in Washington Heights</a>
+                </h3>
+                <p>The decision advances a four-year campaign by City University researchers and local residents, but disappoints opponents who felt it slighted other ethnicities.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Blank Article 4 -->
+          <div class="column is-one-third equal-box">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-5by3">
+                  <img src="assets/placeholder.png" alt="Placeholder image" />
+                </figure>
+              </div>
+              <div class="card-content">
+                <h3 class="title is-5">
+                  <a href="#">(Title coming soon)</a>
+                </h3>
+                <p>Description coming soon.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Blank Article 5 -->
+          <div class="column is-one-third equal-box">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-5by3">
+                  <img src="assets/placeholder.png" alt="Placeholder image" />
+                </figure>
+              </div>
+              <div class="card-content">
+                <h3 class="title is-5">
+                  <a href="#">(Title coming soon)</a>
+                </h3>
+                <p>Description coming soon.</p>
               </div>
             </div>
           </div>
@@ -907,43 +1166,85 @@
       </div>
     </section>
 
-    <!-- Multimedia Projects Section -->
-    <section class="full-bleed-section multimedia-section fade-in-section" id="multimedia">
+    <!-- Mandarin Articles Section -->
+    <section class="full-bleed-section mandarin-articles-section fade-in-section main-section" id="mandarin-articles">
       <div class="container">
-        <h1 class="title">Multimedia Projects</h1>
-        <div class="columns is-multiline">
-          <div class="column is-one-third">
-            <h3 class="title is-5">
-              <a href="https://www.instagram.com/reel/C83qNU3vDl6/" target="_blank">UC Berkeley Encampment Protest</a>
-            </h3>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C83qNU3vDl6/" data-instgrm-version="12"></blockquote>
-          </div>
-          
-          <div class="column is-one-third">
-            <h3 class="title is-5">
-              <a href="https://www.instagram.com/p/C7x6b1PP2s7/" target="_blank">Bluebird Movement in Taiwan</a>
-            </h3>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C7x6b1PP2s7/" data-instgrm-version="12"></blockquote>
-          </div>
-
-          <div class="column is-one-third">
-            <h3 class="title is-5">
-              <a href="https://www.harlemworldmagazine.com/fashion-designer-aquila-benjamin-brings-inclusivity-to-harlem-fashion-week/" target="_blank">
-                Photography: Fashion Designer Aquila Benjamin Brings Inclusivity To Harlem Fashion Week
-              </a>
-            </h3>
+        <h1 class="title"><span class="filled-title">Mandarin</span><br><span class="outlined-title">Articles</span></h1>
+      <div class="columns is-multiline">
+        <div class="column is-one-third equal-box">
+          <div class="card">
             <div class="card-image">
-              <figure class="image is-9by16">
-                <img src="assets/harlem-fashion.jpg" alt="Fashion designer Aquila Benjamin at Harlem Fashion Week" />
+              <figure class="image is-5by3">
+                <img src="assets/gaza.png" alt="Placeholder image" />
               </figure>
+            </div>
+            <div class="card-content">
+              <h3 class="title is-5">
+                  <a href="https://crossing.cw.com.tw/article/19420">The Eyes of Gaza: Seeing Palestine Through Motaz Azaiza's Lens</a>
+              </h3>
+              <p>An op-ed on the life of Motaz Azaiza, a Palestinian photojournalist, through the lens of the Israel-Hamas war.</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    </section>
+
+    <!-- Multimedia Projects Section -->
+    <section class="full-bleed-section multimedia-section fade-in-section main-section" id="multimedia">
+      <div class="container">
+        <h1 class="title"><span class="filled-title">Multimedia</span><br><span class="outlined-title">Projects</span></h1>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+            <h3 class="title is-5">
+            <a href="https://www.instagram.com/reel/C83qNU3vDl6/" target="_blank">UC Berkeley Encampment Protest</a>
+          </h3>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C83qNU3vDl6/" data-instgrm-version="12"></blockquote>
+        </div>
+        
+        <div class="column is-one-third">
+            <h3 class="title is-5">
+            <a href="https://www.instagram.com/p/C7x6b1PP2s7/" target="_blank">Bluebird Movement in Taiwan</a>
+          </h3>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C7x6b1PP2s7/" data-instgrm-version="12"></blockquote>
+        </div>
+
+        <div class="column is-one-third">
+            <h3 class="title is-5">
+            <a href="https://www.harlemworldmagazine.com/fashion-designer-aquila-benjamin-brings-inclusivity-to-harlem-fashion-week/" target="_blank">
+              Photography: Fashion Designer Aquila Benjamin Brings Inclusivity To Harlem Fashion Week
+            </a>
+          </h3>
+          <div class="card-image">
+            <figure class="image is-9by16">
+              <img src="assets/harlem-fashion.jpg" alt="Fashion designer Aquila Benjamin at Harlem Fashion Week" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
     </section>
 
     <div class="footer">
       <p><a href="mailto:yl5784@columbia.edu">Contact Me</a></p>
+    </div>
+
+    <!-- Desktop Tab Bar -->
+    <div class="tab-bar-desktop">
+      <button class="tab-btn" data-section="about-me">About</button>
+      <button class="tab-btn" data-section="data-projects">Data</button>
+      <button class="tab-btn" data-section="english-articles">English</button>
+      <button class="tab-btn" data-section="mandarin-articles">Mandarin</button>
+      <button class="tab-btn" data-section="multimedia">Multimedia</button>
+      <button class="tab-btn" data-section="footer">Contact Me</button>
+    </div>
+    <!-- Mobile Tab Bar -->
+    <div class="tab-bar-mobile">
+      <button class="tab-btn" data-section="about-me">About</button>
+      <button class="tab-btn" data-section="data-projects">Data</button>
+      <button class="tab-btn" data-section="english-articles">English</button>
+      <button class="tab-btn" data-section="mandarin-articles">Mandarin</button>
+      <button class="tab-btn" data-section="multimedia">Multimedia</button>
     </div>
 
     <script async src="https://www.instagram.com/embed.js"></script>
@@ -996,6 +1297,82 @@
           appearOnScroll.observe(fader);
         });
       });
+
+      // Desktop tab bar: scroll to section
+      function handleDesktopTabBar() {
+        if (window.innerWidth <= 768) return;
+        const tabBtns = document.querySelectorAll('.tab-bar-desktop .tab-btn');
+        tabBtns.forEach(btn => {
+          btn.onclick = function() {
+            const sectionId = btn.getAttribute('data-section');
+            let target = null;
+            if (sectionId === 'footer') {
+              target = document.querySelector('.footer');
+            } else if (sectionId === 'english-articles') {
+              target = document.getElementById('english-articles');
+            } else if (sectionId === 'english-articles-mobile') {
+              return;
+            } else {
+              target = document.getElementById(sectionId);
+            }
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          };
+        });
+      }
+      // Mobile tab bar: show/hide sections by ID
+      function handleMobileTabBar() {
+        if (window.innerWidth > 768) return;
+        const tabBtns = document.querySelectorAll('.tab-bar-mobile .tab-btn');
+        const mainSections = Array.from(document.querySelectorAll('.main-section'));
+        let activeIdx = Array.from(tabBtns).findIndex(btn => btn.classList.contains('active'));
+        if (activeIdx === -1) activeIdx = 0;
+        tabBtns.forEach((btn, i) => {
+          btn.onclick = function() {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const sectionId = btn.getAttribute('data-section');
+            mainSections.forEach(sec => {
+              if (
+                (sectionId === 'english-articles' && (sec.id === 'english-articles-mobile')) ||
+                sec.id === sectionId
+              ) {
+                if (sec.id === 'about-me') {
+                  sec.style.display = 'flex';
+                } else {
+                  sec.style.display = 'block';
+                }
+              } else {
+                sec.style.display = 'none';
+              }
+            });
+            window.scrollTo({top: 0, behavior: 'smooth'});
+          };
+        });
+        // Show only the active section
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabBtns[activeIdx].classList.add('active');
+        const sectionId = tabBtns[activeIdx].getAttribute('data-section');
+        mainSections.forEach(sec => {
+          if (
+            (sectionId === 'english-articles' && (sec.id === 'english-articles-mobile')) ||
+            sec.id === sectionId
+          ) {
+            if (sec.id === 'about-me') {
+              sec.style.display = 'flex';
+            } else {
+              sec.style.display = 'block';
+            }
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+      }
+      window.addEventListener('DOMContentLoaded', handleDesktopTabBar);
+      window.addEventListener('DOMContentLoaded', handleMobileTabBar);
+      window.addEventListener('resize', handleDesktopTabBar);
+      window.addEventListener('resize', handleMobileTabBar);
     </script>
   </body>
 </html>
