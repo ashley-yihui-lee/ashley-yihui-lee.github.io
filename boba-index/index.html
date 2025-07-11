@@ -14,7 +14,7 @@
         }
 
         .serif {
-            font-family: 'Lora', serif;
+            font-family: 'Open Sans', sans-serif;
         }
         .sans-serif {
             font-family: 'Open Sans', sans-serif;
@@ -92,7 +92,7 @@
 
         p.body-text {
             font-size: 1.1rem;
-            line-height: 1.4;
+            line-height: 1.6;
             margin-top:0;
             margin-bottom:15px;
         }
@@ -255,6 +255,28 @@
             .header, .story-body, .chart-section {
                 padding: 0 15px; /* Add padding to the left and right */
             }
+
+            /* Mobile adjustments for banner */
+            .with-image-bg {
+                height: 100vh; /* Keep full height on mobile */
+            }
+
+            .with-image-bg .header {
+                padding: 0 20px; /* Add some padding on mobile */
+            }
+
+            h1.headline {
+                font-size: 3rem; /* Slightly smaller on mobile */
+            }
+
+            h2.subhead {
+                font-size: 1.2rem; /* Adjust subhead size */
+            }
+
+            .scroll-down-arrow {
+                bottom: 20px; /* Closer to bottom on mobile */
+                font-size: 1.5rem; /* Smaller arrow on mobile */
+            }
             }
     </style>
 
@@ -262,24 +284,119 @@
     .with-image-bg {
         position: relative;
         background-size: cover;
-        margin-bottom: 2em;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 0;
 
-        /* Center everything inside */
-        min-height: 70svh;
+        /* Full screen height */
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
 
-
-        /* White text with a shadow */
+        /* White text without shadow */
         color: white;
-        text-shadow: 0px 0px 30px black,
-            0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Add a subtle overlay for better text readability */
+    .with-image-bg::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+
+    /* Ensure content is above the overlay */
+    .with-image-bg > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Make all links in banner white */
+    .with-image-bg a {
+        color: white !important;
+        text-decoration: underline;
+        text-decoration-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .with-image-bg a:hover {
+        text-decoration-color: white;
     }
 
     .with-image-bg {
         background-image: url('banner.png');
-    
+    }
+
+    /* Scroll down arrow animation */
+    .scroll-down-arrow {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 2rem;
+        animation: bounce 2s infinite;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+    }
+
+    .scroll-down-arrow:hover {
+        opacity: 1;
+    }
+
+    .arrow-text {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    /* Code link styling */
+    .code-link {
+        opacity: 0.6;
+        margin-left: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 0.9em;
+        transition: all 0.3s ease;
+    }
+
+    .code-link a {
+        color: white !important;
+        text-decoration: none;
+    }
+
+    .code-link:hover {
+        opacity: 0.9;
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        40% {
+            transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+            transform: translateX(-50%) translateY(-5px);
+        }
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
     }
 
 </style>
@@ -314,9 +431,8 @@
     </style>
 
     
-    <!-- google fonts: Open Sans (sans-serif) and Lora (serif) -->
+    <!-- google fonts: Open Sans (sans-serif) -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700&display=swap" rel="stylesheet">
       
     <title>Boba Index</title>
   </head>
@@ -327,12 +443,16 @@
       <p class="kicker"></p>
       <h1 class="headline">Boba Index</h1>
       <h2 class="subhead">What Does Bubble Tea Tell Us About the Global Economy?</h2>
-      <p class="byline">By <a href="https://ashley-yihui-lee.github.io/">Ashley Lee</a> (<a href="https://github.com/ashley-yihui-lee/boba-index">Read My Code</a>)</p>
+      <p class="byline">By <a href="https://ashley-yihui-lee.github.io/">Ashley Lee</a> <span class="code-link"><a href="https://github.com/ashley-yihui-lee/boba-index">Read My Code</a></span></p>
       <p class="date"></p>
+    </div>
+    <div class="scroll-down-arrow" onclick="document.getElementById('content').scrollIntoView();">
+      <span class="arrow-text">Scroll Down</span>
+      <span>↓</span>
     </div>
     </div>
 
-    <div class="story-body">
+    <div class="story-body" id="content" style="padding-top: 40px;">
       <p class="body-text serif">Bubble tea, or boba, is a tea-based drink that originated in Taiwan and has gained popularity worldwide. Made with freshly brewed tea, it boasts a rich texture and comes in many variations—it can be creamy, sweet, or even savory.</p>  
       <p class="body-text serif">According to <a href="https://www.fortunebusinessinsights.com/industry-reports/bubble-tea-market-101564">Fortune Business Insights</a>, the global bubble tea market was valued at USD 2.63 billion in 2024. As its popularity grows, major chain brands such as Gong Cha, Chatime, Coco Fresh Tea & Juice, Quickly, and Xing Fu Tang have expanded globally. No matter where you are, chances are you’ll find one of these brands nearby.</p>  
       <p class="body-text serif">One of the biggest names, Gong Cha, has opened over 2,000 stores in 23 countries, offering insight into the global economy. Similar to <em>The Economist</em>’s Big Mac Index—used since 1986 to compare purchasing power across countries—we can evaluate global buying power through the price of Gong Cha’s Pearl Milk Tea, a classic choice for bubble tea drinkers and the “OG” of boba flavors. While the drink remains the same, its price varies significantly from city to city.</p>  
@@ -430,7 +550,7 @@
                     overflow:hidden;
                 }
                 #g-boba-graphic-full p {
-                    font-family:Lora-Bold;
+                    font-family:'Open Sans', sans-serif;
                     line-height:24px;
                     height:auto;
                     opacity:1;
@@ -443,7 +563,7 @@
                     padding-top:0;
                     mix-blend-mode:normal;
                     font-style:normal;
-                    font-weight:regular;
+                    font-weight:bold;
                     position:static;
                 }
                 #g-boba-graphic-full .g-pstyle0 {
@@ -460,7 +580,7 @@
                     overflow:hidden;
                 }
                 #g-boba-graphic-medium p {
-                    font-family:Lora-Bold;
+                    font-family:'Open Sans', sans-serif;
                     line-height:18px;
                     height:auto;
                     opacity:1;
@@ -473,7 +593,7 @@
                     padding-top:0;
                     mix-blend-mode:normal;
                     font-style:normal;
-                    font-weight:regular;
+                    font-weight:bold;
                     position:static;
                 }
                 #g-boba-graphic-medium .g-pstyle0 {
@@ -490,7 +610,7 @@
                     overflow:hidden;
                 }
                 #g-boba-graphic-mobile p {
-                    font-family:Lora-Bold;
+                    font-family:'Open Sans', sans-serif;
                     line-height:15px;
                     height:auto;
                     opacity:1;
@@ -503,7 +623,7 @@
                     padding-top:0;
                     mix-blend-mode:normal;
                     font-style:normal;
-                    font-weight:regular;
+                    font-weight:bold;
                     position:static;
                 }
                 #g-boba-graphic-mobile .g-pstyle0 {
@@ -887,7 +1007,7 @@
 		overflow:hidden;
 	}
 	#g-boba-full p {
-		font-family:Lora-SemiBold;
+		font-family:'Open Sans', sans-serif;
 		line-height:17px;
 		height:auto;
 		opacity:1;
@@ -900,7 +1020,7 @@
 		padding-top:0;
 		mix-blend-mode:normal;
 		font-style:normal;
-		font-weight:regular;
+		font-weight:600;
 		position:static;
 	}
 	#g-boba-full .g-pstyle0 {
@@ -934,7 +1054,7 @@
 		overflow:hidden;
 	}
 	#g-boba-medium p {
-		font-family:Lora-SemiBold;
+		font-family:'Open Sans', sans-serif;
 		line-height:13px;
 		height:auto;
 		opacity:1;
@@ -947,7 +1067,7 @@
 		padding-top:0;
 		mix-blend-mode:normal;
 		font-style:normal;
-		font-weight:regular;
+		font-weight:600;
 		position:static;
 	}
 	#g-boba-medium .g-pstyle0 {
@@ -981,7 +1101,7 @@
 		overflow:hidden;
 	}
 	#g-boba-mobile p {
-		font-family:Lora-SemiBold;
+		font-family:'Open Sans', sans-serif;
 		line-height:14px;
 		height:auto;
 		opacity:1;
@@ -994,7 +1114,7 @@
 		padding-top:0;
 		mix-blend-mode:normal;
 		font-style:normal;
-		font-weight:regular;
+		font-weight:600;
 		position:static;
 	}
 	#g-boba-mobile .g-pstyle0 {
@@ -1310,7 +1430,8 @@
     
         <p class="body-text serif">The Boba Index offers a flavorful way to explore the global economy. Whether you’re sipping boba in New York or Taipei, your cup of tea is more than just a drink—it’s an economic indicator in disguise.</p>  
     </div>
-    
+
+    <div style="height: 80px;"></div>
       
   </body>
 </html>
